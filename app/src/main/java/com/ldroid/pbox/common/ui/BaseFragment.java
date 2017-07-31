@@ -4,6 +4,7 @@
 package com.ldroid.pbox.common.ui;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ldroid.pbox.R;
@@ -70,6 +72,24 @@ public abstract class BaseFragment extends Fragment implements OnClickListener {
         title.setText(titleName);
         findViewById(R.id.rl_title_bar_left).setVisibility(View.GONE);
         findViewById(R.id.rl_title_bar_right).setVisibility(View.GONE);
+    }
+
+    public void initTopBarForLeft(String titleName, String leftName, Drawable leftDrawable) {
+        TextView title = (TextView) findViewById(R.id.tv_main_title);
+        title.setText(titleName);
+
+        TextView tVLeft = (TextView) findViewById(R.id.tv_title_bar_left);
+        tVLeft.setVisibility(leftDrawable == null ? View.VISIBLE : View.INVISIBLE);
+        tVLeft.setText(leftName);
+
+        ImageView iVLeft = (ImageView) findViewById(R.id.iv_title_bar_left);
+        iVLeft.setVisibility(leftDrawable != null ? View.VISIBLE : View.INVISIBLE);
+        if (leftDrawable != null)
+            iVLeft.setBackgroundDrawable(leftDrawable);
+
+        findViewById(R.id.rl_title_bar_left).setVisibility(View.VISIBLE);
+        findViewById(R.id.rl_title_bar_left).setOnClickListener(this);
+        findViewById(R.id.rl_title_bar_right).setVisibility(View.INVISIBLE);
     }
 
 }

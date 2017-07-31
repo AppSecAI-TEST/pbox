@@ -7,25 +7,25 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.ldroid.pbox.R;
 import com.ldroid.pbox.common.ui.lib.SystemBarTintManager;
 
 import butterknife.ButterKnife;
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener{
 
     public Context mContext;
-
-
 
 
     @Override
@@ -103,6 +103,46 @@ public abstract class BaseActivity extends AppCompatActivity {
             winParams.flags &= ~bits;
         }
         win.setAttributes(winParams);
+    }
+
+
+
+
+    public void initTopBarForOnlyTitle(String titleName) {
+        TextView title = (TextView) findViewById(R.id.tv_main_title);
+        title.setText(titleName);
+        findViewById(R.id.rl_title_bar_left).setVisibility(View.GONE);
+        findViewById(R.id.rl_title_bar_right).setVisibility(View.GONE);
+    }
+
+    public void initTopBarForLeft(String titleName, String leftName, Drawable leftDrawable) {
+        TextView title = (TextView) findViewById(R.id.tv_main_title);
+        title.setText(titleName);
+
+        TextView tVLeft = (TextView) findViewById(R.id.tv_title_bar_left);
+        tVLeft.setVisibility(leftDrawable == null ? View.VISIBLE : View.INVISIBLE);
+        tVLeft.setText(leftName);
+
+        ImageView iVLeft = (ImageView) findViewById(R.id.iv_title_bar_left);
+        iVLeft.setVisibility(leftDrawable != null ? View.VISIBLE : View.INVISIBLE);
+        if (leftDrawable != null)
+            iVLeft.setBackgroundDrawable(leftDrawable);
+
+        findViewById(R.id.rl_title_bar_left).setVisibility(View.VISIBLE);
+        findViewById(R.id.rl_title_bar_left).setOnClickListener(this);
+        findViewById(R.id.rl_title_bar_right).setVisibility(View.INVISIBLE);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.rl_title_bar_left:
+                finish();
+                break;
+
+            default:
+                break;
+        }
     }
 
 }

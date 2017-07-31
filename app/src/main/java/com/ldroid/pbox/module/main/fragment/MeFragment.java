@@ -5,18 +5,28 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.ldroid.pbox.R;
 import com.ldroid.pbox.common.ui.BaseFragment;
 import com.ldroid.pbox.common.ui.adapter.CommonAdapter;
 import com.ldroid.pbox.common.ui.adapter.ViewHolder;
+import com.ldroid.pbox.module.me.PersonalActivity;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 
-public class MeFragment extends BaseFragment {
+public class MeFragment extends BaseFragment implements AdapterView.OnItemClickListener {
+
+    public static final int PERSONAL = 1;
+    public static final int CHART = 2;
+    public static final int SHARE = 3;
+    public static final int CLEAN = 4;
+    public static final int APPRAISE = 5;
+    public static final int FEEDBACK = 6;
+    public static final int LOGOUT = 7;
 
 
     @BindView(R.id.list_view)
@@ -43,7 +53,7 @@ public class MeFragment extends BaseFragment {
 
     @Override
     protected void initListener() {
-
+        mListView.setOnItemClickListener(this);
     }
 
     @Override
@@ -56,7 +66,30 @@ public class MeFragment extends BaseFragment {
 
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        ModuleEntity module = mAdapter.getItem(position);
+        switch (module.module) {
+            case PERSONAL:
+                startAnimActivity(PersonalActivity.class);
+                break;
+            case CHART:
+                break;
+            case SHARE:
+                break;
+            case CLEAN:
+                break;
+            case APPRAISE:
+                break;
+            case FEEDBACK:
+                break;
+            case LOGOUT:
+                break;
+        }
+    }
+
     class Adapter extends CommonAdapter<ModuleEntity> {
+
 
         public Adapter() {
             super(getActivity(), R.layout.layout_me_item);
@@ -66,13 +99,13 @@ public class MeFragment extends BaseFragment {
 
         public void init() {
             ArrayList data = new ArrayList();
-            data.add(new ModuleEntity("个人信息", R.drawable.icon_me_info));
-            data.add(new ModuleEntity("订阅报表", R.drawable.icon_me_book));
-            data.add(new ModuleEntity("分享给好友", R.drawable.icon_me_share));
-            data.add(new ModuleEntity("清除缓存", R.drawable.icon_me_clean));
-            data.add(new ModuleEntity("评价我们", R.drawable.icon_me_appraise));
-            data.add(new ModuleEntity("用户反馈", R.drawable.icon_me_feedback));
-            data.add(new ModuleEntity("退出登录", R.drawable.icon_me_logout));
+            data.add(new ModuleEntity(PERSONAL, "个人信息", R.drawable.icon_me_info));
+            data.add(new ModuleEntity(CHART, "订阅报表", R.drawable.icon_me_book));
+            data.add(new ModuleEntity(SHARE, "分享给好友", R.drawable.icon_me_share));
+            data.add(new ModuleEntity(CLEAN, "清除缓存", R.drawable.icon_me_clean));
+            data.add(new ModuleEntity(APPRAISE, "评价我们", R.drawable.icon_me_appraise));
+            data.add(new ModuleEntity(FEEDBACK, "用户反馈", R.drawable.icon_me_feedback));
+            data.add(new ModuleEntity(LOGOUT, "退出登录", R.drawable.icon_me_logout));
 
             setListData(data);
         }
@@ -86,10 +119,12 @@ public class MeFragment extends BaseFragment {
     }
 
     class ModuleEntity {
+        public int module;
         public String text;
         public int drawable;
 
-        public ModuleEntity(String text, int drawable) {
+        public ModuleEntity(int module, String text, int drawable) {
+            this.module = module;
             this.text = text;
             this.drawable = drawable;
         }

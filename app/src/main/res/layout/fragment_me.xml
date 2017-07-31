@@ -2,17 +2,33 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/colorWhite"
+              android:background="@color/colorBackground"
               android:orientation="vertical">
 
 
     <include layout="@layout/layout_common_title_bar"></include>
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@drawable/bg_status_bar">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/icon_me_avatar"/>
+
+
+    </RelativeLayout>
 
 
     <ListView
         android:id="@+id/list_view"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="@android:color/transparent">

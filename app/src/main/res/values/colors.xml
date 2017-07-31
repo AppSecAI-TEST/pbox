@@ -5,6 +5,7 @@
     <color name="colorAccent">@color/colorApp</color>
 
 
+    <color name="colorBackground">#f9f9f9</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorApp">#47d4c2</color>
     <color name="colorText">#666666</color>

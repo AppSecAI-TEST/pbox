@@ -22,6 +22,8 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.ldroid.pbox.R;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,7 +38,7 @@ public class BottomMenuDialog extends BottomSheetDialogFragment implements View.
 
     private ArrayList<String> mTitles;
     private Map<String, View.OnClickListener> mListener;
-    private int mTextColor = Color.parseColor("#3BCF67");
+    private int mTextColor ;
 
     private LinearLayout mRootView;
     private Dialog mDialog;
@@ -51,12 +53,14 @@ public class BottomMenuDialog extends BottomSheetDialogFragment implements View.
     public BottomMenuDialog(BottomMenuBuilder builder) {
         mTitles = builder.titles;
         mListener = builder.listeners;
+
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         this.mContext = context;
+        mTextColor = getResources().getColor(R.color.colorApp) ;
     }
 
     @Override
@@ -143,7 +147,7 @@ public class BottomMenuDialog extends BottomSheetDialogFragment implements View.
     private View initView(String button, int position, boolean hasBottomLine, boolean hasBottomGap) {
         TextView childView = new TextView(mContext);
         childView.setText(button);
-        childView.setTextSize(18);
+        childView.setTextSize(16);
         childView.setTextColor(mTextColor);
         childView.setTag(position);
         childView.setGravity(Gravity.CENTER);

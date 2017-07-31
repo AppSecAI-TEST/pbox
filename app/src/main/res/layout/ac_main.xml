@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/root"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite">
+
+
+    <RelativeLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/line_sep"/>
+
+    <ImageView
+        android:id="@id/line_sep"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_above="@+id/bottom"
+        android:background="@color/colorSeparator"
+        />
+
+
+    <LinearLayout
+        android:id="@id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="1dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/tab_main_main"
+            android:layout_width="0dp"
+            android:layout_height="49dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:tag="0">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="首页"
+                android:textColor="@drawable/sel_txt_main_color"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tab_main_chart"
+            android:layout_width="0dp"
+            android:layout_height="49dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:tag="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="报表"
+                android:textColor="@drawable/sel_txt_main_color"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/tab_main_me"
+            android:layout_width="0dp"
+            android:layout_height="49dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:tag="2">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="我的"
+                android:textColor="@drawable/sel_txt_main_color"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

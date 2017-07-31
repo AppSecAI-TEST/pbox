@@ -1,0 +1,259 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/colorWhite"
+              android:orientation="vertical">
+
+
+    <include layout="@layout/layout_common_title_bar"></include>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="95dp"
+            android:background="@drawable/bg_status_bar"/>
+
+
+        <com.crazysunj.cardslideview.CardViewPager
+            android:id="@+id/card_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="172.5dp"
+            android:layout_gravity="bottom"
+            app:card_loop="true"
+            app:card_margin="10dp"
+            app:card_max_offset="190dp"
+            app:card_padding="20dp">
+
+        </com.crazysunj.cardslideview.CardViewPager>
+    </FrameLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="25dp"
+        android:drawableLeft="@drawable/icon_check_price_tools"
+        android:drawablePadding="5dp"
+        android:text="核价工具"
+        android:textColor="@color/colorHint"
+        android:textSize="16sp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:paddingLeft="23.5dp"
+        android:paddingRight="23.5dp"
+        android:weightSum="4">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="8dp"
+            android:drawableTop="@drawable/icon_main_common"
+            android:gravity="center_horizontal"
+            android:text="通用"
+            android:textColor="@color/colorText"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="8dp"
+            android:drawableTop="@drawable/icon_main_common"
+            android:gravity="center_horizontal"
+            android:text="E邮宝"
+            android:textColor="@color/colorText"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="8dp"
+            android:drawableTop="@drawable/icon_main_common"
+            android:gravity="center_horizontal"
+            android:text="挂号小包"
+            android:textColor="@color/colorText"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="8dp"
+            android:drawableTop="@drawable/icon_main_common"
+            android:gravity="center_horizontal"
+            android:text="挂号打包"
+            android:textColor="@color/colorText"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:paddingLeft="23.5dp"
+        android:paddingRight="23.5dp"
+        android:weightSum="4">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="8dp"
+            android:drawableTop="@drawable/icon_main_common"
+            android:gravity="center_horizontal"
+            android:text="EMS"
+            android:textColor="@color/colorText"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="8dp"
+            android:drawableTop="@drawable/icon_main_common"
+            android:gravity="center_horizontal"
+            android:text="海外仓"
+            android:textColor="@color/colorText"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/colorText"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="25dp"
+        android:drawableLeft="@drawable/icon_other_tools"
+        android:drawablePadding="5dp"
+        android:text="辅助工具"
+        android:textColor="@color/colorHint"
+        android:textSize="16sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:paddingLeft="23.5dp"
+        android:paddingRight="23.5dp"
+        android:weightSum="4">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="8dp"
+            android:drawableTop="@drawable/icon_main_common"
+            android:gravity="center_horizontal"
+            android:text="成本利润"
+            android:textColor="@color/colorText"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="8dp"
+            android:drawableTop="@drawable/icon_main_common"
+            android:gravity="center_horizontal"
+            android:text="刨重换算"
+            android:textColor="@color/colorText"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="8dp"
+            android:drawableTop="@drawable/icon_main_common"
+            android:gravity="center_horizontal"
+            android:text="货柜装箱"
+            android:textColor="@color/colorText"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="8dp"
+            android:drawableTop="@drawable/icon_main_common"
+            android:gravity="center_horizontal"
+            android:text="运费估算"
+            android:textColor="@color/colorText"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:paddingLeft="23.5dp"
+        android:paddingRight="23.5dp"
+        android:weightSum="4">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="8dp"
+            android:drawableTop="@drawable/icon_main_common"
+            android:gravity="center_horizontal"
+            android:text="物流跟踪"
+            android:textColor="@color/colorText"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

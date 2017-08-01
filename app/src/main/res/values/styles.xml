@@ -22,4 +22,13 @@
         <attr name="border_width" format="dimension"/>
         <attr name="border_color" format="color"/>
     </declare-styleable>
+
+
+    <style name="main_alert_dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
 </resources>

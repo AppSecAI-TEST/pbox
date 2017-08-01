@@ -133,6 +133,36 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         findViewById(R.id.rl_title_bar_right).setVisibility(View.INVISIBLE);
     }
 
+    public void initTopBarForBoth(String titleName, String leftName, Drawable leftDrawable,
+                                  String rightName, Drawable rightDrawable) {
+        TextView title = (TextView) findViewById(R.id.tv_main_title);
+        title.setText(titleName);
+
+        TextView tVLeft = (TextView) findViewById(R.id.tv_title_bar_left);
+        tVLeft.setVisibility(leftDrawable == null ? View.VISIBLE : View.INVISIBLE);
+        tVLeft.setText(leftName);
+
+        ImageView iVLeft = (ImageView) findViewById(R.id.iv_title_bar_left);
+        iVLeft.setVisibility(leftDrawable != null ? View.VISIBLE : View.INVISIBLE);
+        if (leftDrawable != null)
+            iVLeft.setBackgroundDrawable(leftDrawable);
+
+        TextView tVRight = (TextView) findViewById(R.id.tv_title_bar_right);
+        tVRight.setVisibility(rightDrawable == null ? View.VISIBLE : View.INVISIBLE);
+        tVRight.setText(rightName);
+
+        ImageView iVRight = (ImageView) findViewById(R.id.iv_title_bar_right);
+        iVRight.setVisibility(rightDrawable != null ? View.VISIBLE : View.INVISIBLE);
+        if (rightDrawable != null)
+            iVRight.setBackgroundDrawable(rightDrawable);
+
+        findViewById(R.id.rl_title_bar_left).setVisibility(View.VISIBLE);
+        findViewById(R.id.rl_title_bar_right).setVisibility(View.VISIBLE);
+        findViewById(R.id.rl_title_bar_left).setOnClickListener(this);
+        findViewById(R.id.rl_title_bar_right).setOnClickListener(this);
+    }
+
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {

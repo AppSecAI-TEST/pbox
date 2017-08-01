@@ -59,6 +59,7 @@
 
 
     <RelativeLayout
+        android:id="@+id/rl_nickname"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/colorWhite"
@@ -94,6 +95,7 @@
         android:layout_marginRight="16dp"/>
 
     <RelativeLayout
+        android:id="@+id/rl_phone"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/colorWhite"

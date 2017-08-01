@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@color/colorTransparent60"
+              android:minHeight="9999dp"
+              android:minWidth="9999dp">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="fill_parent"
+            android:layout_height="359dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="21.5dp"
+            android:layout_marginRight="21.5dp"
+            android:background="@drawable/bg_white_radius"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingLeft="33.5dp"
+            android:paddingRight="33.5dp"
+            android:paddingTop="38dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="订阅"
+                android:textColor="@color/colorText"
+                android:textSize="16sp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="首月免费试用"
+                android:textColor="@color/colorText"
+                android:textSize="16sp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_marginRight="7dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="免费"
+                        android:textColor="@color/colorApp"
+                        android:textSize="18sp"/>
+
+                    <Button
+                        android:layout_width="59dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="22dp"
+                        android:background="@drawable/btn_app_radius_n"
+                        android:text="一个月"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="14sp"/>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_weight="1">
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/dismiss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/icon_index_close"/>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -13,6 +13,7 @@ import com.ldroid.pbox.common.ui.BaseFragment;
 import com.ldroid.pbox.common.ui.adapter.CommonAdapter;
 import com.ldroid.pbox.common.ui.adapter.ViewHolder;
 import com.ldroid.pbox.module.me.PersonalActivity;
+import com.ldroid.pbox.widget.SubscribeDialog;
 
 import java.util.ArrayList;
 
@@ -32,6 +33,7 @@ public class MeFragment extends BaseFragment implements AdapterView.OnItemClickL
     @BindView(R.id.list_view)
     ListView mListView;
     private Adapter mAdapter;
+    private SubscribeDialog mSubDialog ;
 
     @Override
     protected View getContentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -49,6 +51,8 @@ public class MeFragment extends BaseFragment implements AdapterView.OnItemClickL
 
         mAdapter = new Adapter();
         mListView.setAdapter(mAdapter);
+
+        mSubDialog = new SubscribeDialog(getActivity()) ;
     }
 
     @Override
@@ -74,6 +78,7 @@ public class MeFragment extends BaseFragment implements AdapterView.OnItemClickL
                 startAnimActivity(PersonalActivity.class);
                 break;
             case CHART:
+                mSubDialog.show();
                 break;
             case SHARE:
                 break;

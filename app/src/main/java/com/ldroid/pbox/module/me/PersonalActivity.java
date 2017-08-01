@@ -23,8 +23,8 @@ public class PersonalActivity extends BaseActivity {
 
     @Override
     protected void initUI() {
-        setTranslucentStatus(0,R.drawable.bg_status_bar);
-        initTopBarForLeft("个人信息",null, getResources().getDrawable(R.drawable.icon_common_back));
+        setTranslucentStatus(0, R.drawable.bg_status_bar);
+        initTopBarForLeft("个人信息", null, getResources().getDrawable(R.drawable.icon_common_back));
     }
 
     @Override
@@ -54,5 +54,14 @@ public class PersonalActivity extends BaseActivity {
                 })
                 .addItem("取消", null).build();
         dialog.show(getSupportFragmentManager());
+    }
+
+    @OnClick(R.id.rl_nickname)
+    public void onClickNickName() {
+        startAnimActivity(ModifyNickNameActivity.class);
+    }
+    @OnClick(R.id.rl_phone)
+    public void onClickPhone() {
+        startAnimActivity(ModifyPhoneActivity.class);
     }
 }

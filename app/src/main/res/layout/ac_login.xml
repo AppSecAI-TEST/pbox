@@ -48,10 +48,11 @@
 
             <Button
                 android:id="@+id/btn_sms"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0"
-                style="?android:attr/borderlessButtonStyle"                android:background="@color/colorWhite"
+                android:background="@color/colorWhite"
                 android:gravity="center"
                 android:text="获取验证码"
                 android:textColor="@color/colorApp"
@@ -85,7 +86,7 @@
         <Button
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="40dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/btn_app_radius_n"
             android:text="登录"

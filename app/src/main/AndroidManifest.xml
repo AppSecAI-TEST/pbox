@@ -29,6 +29,10 @@
             android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".module.me.PersonalActivity">
         </activity>
+        <activity android:name=".module.me.ModifyNickNameActivity">
+        </activity>
+        <activity android:name=".module.me.ModifyPhoneActivity">
+        </activity>
     </application>
 
 </manifest>

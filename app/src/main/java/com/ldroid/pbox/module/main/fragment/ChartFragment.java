@@ -14,6 +14,7 @@ import com.ldroid.pbox.common.ui.adapter.CommonAdapter;
 import com.ldroid.pbox.common.ui.adapter.ViewHolder;
 import com.ldroid.pbox.entities.out.ChartOutEntity;
 import com.ldroid.pbox.module.chart.ChartExoprtActivity;
+import com.ldroid.pbox.module.chart.SearchProductActivity;
 
 import java.util.ArrayList;
 
@@ -40,9 +41,7 @@ public class ChartFragment extends BaseFragment {
 
     @Override
     protected void initUI() {
-
-        initTopBarForOnlyTitle("报表");
-
+        initTopBarForRight("报表", null, getResources().getDrawable(R.drawable.icon_chart_export));
         mAdapter = new Adapter();
         mListView.setAdapter(mAdapter);
 
@@ -66,7 +65,11 @@ public class ChartFragment extends BaseFragment {
 
     @Override
     public void onClick(View v) {
-
+        switch (v.getId()) {
+            case R.id.rl_title_bar_right:
+                startAnimActivity(SearchProductActivity.class);
+                break;
+        }
     }
 
     class Adapter extends CommonAdapter<ChartOutEntity> implements StickyListHeadersAdapter {
@@ -77,7 +80,6 @@ public class ChartFragment extends BaseFragment {
 
         @Override
         public void convert(ViewHolder holder, ChartOutEntity chartOutEntity) {
-
 
 
         }

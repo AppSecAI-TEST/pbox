@@ -92,4 +92,24 @@ public abstract class BaseFragment extends Fragment implements OnClickListener {
         findViewById(R.id.rl_title_bar_right).setVisibility(View.INVISIBLE);
     }
 
+
+    public void initTopBarForRight(String titleName, String rightName, Drawable rdrawable) {
+        TextView title = (TextView) findViewById(R.id.tv_main_title);
+        title.setText(titleName);
+
+        TextView tVRight = (TextView) findViewById(R.id.tv_title_bar_right);
+        tVRight.setVisibility(rdrawable == null ? View.VISIBLE : View.INVISIBLE);
+        tVRight.setText(rightName);
+
+        ImageView iVRight = (ImageView) findViewById(R.id.iv_title_bar_right);
+        iVRight.setVisibility(rdrawable != null ? View.VISIBLE : View.INVISIBLE);
+        if (rdrawable != null)
+            iVRight.setBackgroundDrawable(rdrawable);
+
+        findViewById(R.id.rl_title_bar_left).setVisibility(View.INVISIBLE);
+        findViewById(R.id.rl_title_bar_right).setVisibility(View.VISIBLE);
+        findViewById(R.id.rl_title_bar_right).setOnClickListener(this);
+
+    }
+
 }

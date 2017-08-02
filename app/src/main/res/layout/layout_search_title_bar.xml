@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp">
+
+    <RelativeLayout
+        android:id="@+id/rl_common_titlebar"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/bg_status_bar"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp">
+
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:layout_toLeftOf="@+id/tv_cancel"
+            android:background="@drawable/btn_white_radius_90"
+            android:gravity="center_vertical"
+            android:hint="请输入您要查询的产品名称"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint"
+            android:textSize="15sp"/>
+
+
+        <TextView
+            android:id="@id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

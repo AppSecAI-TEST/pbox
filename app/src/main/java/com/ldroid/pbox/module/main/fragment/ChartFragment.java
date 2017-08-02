@@ -1,6 +1,7 @@
 package com.ldroid.pbox.module.main.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import com.ldroid.pbox.common.ui.BaseFragment;
 import com.ldroid.pbox.common.ui.adapter.CommonAdapter;
 import com.ldroid.pbox.common.ui.adapter.ViewHolder;
 import com.ldroid.pbox.entities.out.ChartOutEntity;
+import com.ldroid.pbox.module.chart.ChartExoprtActivity;
 
 import java.util.ArrayList;
 
@@ -45,8 +47,8 @@ public class ChartFragment extends BaseFragment {
         mListView.setAdapter(mAdapter);
 
         // test
-        ArrayList list = new ArrayList() ;
-        for (int i = 0; i < 20 ; i++) {
+        ArrayList list = new ArrayList();
+        for (int i = 0; i < 20; i++) {
             list.add(new ChartOutEntity());
         }
         mAdapter.setListData(list);
@@ -76,6 +78,8 @@ public class ChartFragment extends BaseFragment {
         @Override
         public void convert(ViewHolder holder, ChartOutEntity chartOutEntity) {
 
+
+
         }
 
         @Override
@@ -87,12 +91,21 @@ public class ChartFragment extends BaseFragment {
             long section = getHeaderId(position);
             TextView tv = (TextView) convertView.findViewById(R.id.title);
             tv.setText("本月" + section);
+
+            convertView.findViewById(R.id.tv_export).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startAnimActivity(new Intent(getActivity(), ChartExoprtActivity.class));
+                }
+            });
+
+
             return convertView;
         }
 
         @Override
         public long getHeaderId(int position) {
-            return position % 5 ;
+            return position % 5;
         }
     }
 

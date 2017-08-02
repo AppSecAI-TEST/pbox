@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/root"
+                android:background="@color/colorBackground"
+                android:orientation="vertical">
+
+
+    <include layout="@layout/layout_common_title_bar"></include>
+
+
+    <com.ldroid.pbox.widget.calendar.CalendarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.ldroid.pbox.widget.calendar.CalendarLayout>
+
+
+    <Button
+        android:id="@+id/btn_export"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/btn_app_radius_n"
+        android:text="导出"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"/>
+
+</RelativeLayout>

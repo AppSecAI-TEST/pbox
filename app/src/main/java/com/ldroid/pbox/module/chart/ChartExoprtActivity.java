@@ -1,10 +1,11 @@
-package com.ldroid.pbox.widget.calendar;
+package com.ldroid.pbox.module.chart;
 
 import com.ldroid.pbox.R;
 import com.ldroid.pbox.common.ui.BaseActivity;
 
+import butterknife.OnClick;
 
-public class CalendarActivity extends BaseActivity {
+public class ChartExoprtActivity extends BaseActivity {
 
 
     @Override
@@ -19,6 +20,14 @@ public class CalendarActivity extends BaseActivity {
 
     @Override
     protected void initUI() {
+        setTranslucentStatus(0, R.drawable.bg_status_bar);
+        initTopBarForLeft("导出数据", null, getResources().getDrawable(R.drawable.icon_common_back));
+
+    }
+
+
+    @OnClick(R.id.btn_export)
+    public void onClickExport() {
 
     }
 

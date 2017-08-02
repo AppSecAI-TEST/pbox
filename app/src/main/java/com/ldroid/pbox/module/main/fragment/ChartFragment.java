@@ -2,6 +2,8 @@ package com.ldroid.pbox.module.main.fragment;
 
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,11 @@ import com.ldroid.pbox.R;
 import com.ldroid.pbox.common.ui.BaseFragment;
 import com.ldroid.pbox.common.ui.adapter.CommonAdapter;
 import com.ldroid.pbox.common.ui.adapter.ViewHolder;
+import com.ldroid.pbox.common.ui.lib.swipemenulistview.SwipeMenu;
+import com.ldroid.pbox.common.ui.lib.swipemenulistview.SwipeMenuCreator;
+import com.ldroid.pbox.common.ui.lib.swipemenulistview.SwipeMenuItem;
+import com.ldroid.pbox.common.ui.lib.swipemenulistview.SwipeMenuListView;
+import com.ldroid.pbox.common.util.DensityUtils;
 import com.ldroid.pbox.entities.out.ChartOutEntity;
 import com.ldroid.pbox.module.chart.ChartExoprtActivity;
 import com.ldroid.pbox.module.chart.SearchProductActivity;
@@ -19,8 +26,9 @@ import com.ldroid.pbox.module.chart.SearchProductActivity;
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import se.emilsjolander.stickylistheaders.StickyListHeadersAdapter;
-import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
+
+import com.ldroid.pbox.common.ui.lib.stickylistheaders.StickyListHeadersAdapter;
+import com.ldroid.pbox.common.ui.lib.stickylistheaders.StickyListHeadersListView;
 
 public class ChartFragment extends BaseFragment {
 
@@ -44,6 +52,27 @@ public class ChartFragment extends BaseFragment {
         initTopBarForRight("报表", null, getResources().getDrawable(R.drawable.icon_chart_export));
         mAdapter = new Adapter();
         mListView.setAdapter(mAdapter);
+
+        SwipeMenuCreator creator = new SwipeMenuCreator() {
+            @Override
+            public void create(SwipeMenu menu) {
+                createMenu2(menu);
+            }
+
+            private void createMenu2(SwipeMenu menu) {
+
+                SwipeMenuItem item = new SwipeMenuItem(getActivity());
+                item.setBackground(new ColorDrawable(Color.rgb(0xF9, 0x3F, 0x25)));
+                item.setWidth(DensityUtils.dp2px(getActivity(), 90));
+                item.setTitle("删除");
+                item.setTitleSize(18);
+                item.setTitleColor(Color.WHITE);
+                menu.addMenuItem(item);
+
+            }
+        };
+        SwipeMenuListView.class.cast(mListView.getWrappedList()).setMenuCreator(creator);
+
 
         // test
         ArrayList list = new ArrayList();

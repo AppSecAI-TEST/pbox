@@ -8,7 +8,7 @@
 
     <include layout="@layout/layout_common_title_bar"></include>
 
-    <se.emilsjolander.stickylistheaders.StickyListHeadersListView
+    <com.ldroid.pbox.common.ui.lib.stickylistheaders.StickyListHeadersListView
         android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -11,25 +11,21 @@
         android:paddingLeft="45dp"
         android:paddingRight="45dp">
 
-        <FrameLayout
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/bg_login_logo">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"/>
-
-        </FrameLayout>
+            android:layout_marginTop="80dp"
+            android:background="@drawable/bg_login_logo"/>
 
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="45dp"
+            android:layout_marginTop="30dp"
             android:background="@color/colorWhite"
+            android:drawableLeft="@drawable/icon_login_account"
+            android:drawablePadding="7dp"
             android:hint="请输入昵称"
             android:maxLength="20"
             android:paddingLeft="10dp"
@@ -53,6 +49,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/colorWhite"
+                android:drawableLeft="@drawable/icon_login_cellphone"
+                android:drawablePadding="7dp"
                 android:hint="请输入手机号码"
                 android:inputType="number"
                 android:maxLength="11"
@@ -87,6 +85,8 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@color/colorWhite"
+            android:drawableLeft="@drawable/icon_login_pwd"
+            android:drawablePadding="7dp"
             android:hint="请输入验证码"
             android:maxLength="10"
             android:paddingLeft="10dp"
@@ -102,7 +102,7 @@
         <Button
             android:id="@+id/btn_register"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="40dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/btn_app_radius_n"
             android:text="提交"

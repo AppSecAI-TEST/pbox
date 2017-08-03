@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 
 
-public class CommonToolsActivity extends BaseActivity {
+public class ForeignToolsActivity extends BaseActivity {
 
 
     @BindView(R.id.list_view)
@@ -27,14 +27,14 @@ public class CommonToolsActivity extends BaseActivity {
 
     @Override
     protected void setContentView() {
-        setContentView(R.layout.ac_common_tools);
+        setContentView(R.layout.ac_foreign_tools);
     }
 
     @Override
     protected void initUI() {
         setTranslucentStatus(0, R.drawable.bg_status_bar);
 
-        initTopBarForBoth("通用", null, getResources().getDrawable(R.drawable.icon_common_back),
+        initTopBarForBoth("海外仓", null, getResources().getDrawable(R.drawable.icon_common_back),
                 "计算", null);
 
         findViewById(R.id.tv_head_key).setVisibility(View.INVISIBLE);
@@ -68,7 +68,7 @@ public class CommonToolsActivity extends BaseActivity {
     class Adapter extends CommonAdapter<ToolsResultEntity> {
 
         public Adapter() {
-            super(CommonToolsActivity.this, R.layout.layout_common_tools_item);
+            super(ForeignToolsActivity.this, R.layout.layout_common_tools_item);
         }
 
         @Override

@@ -13,6 +13,13 @@ import com.crazysunj.cardslideview.CardViewPager;
 import com.ldroid.pbox.R;
 import com.ldroid.pbox.common.ui.BaseFragment;
 import com.ldroid.pbox.module.main.tools.CommonToolsActivity;
+import com.ldroid.pbox.module.main.tools.EmsToolsActivity;
+import com.ldroid.pbox.module.main.tools.EubToolsActivity;
+import com.ldroid.pbox.module.main.tools.ForeignToolsActivity;
+import com.ldroid.pbox.module.main.tools.PostalBigToolsActivity;
+import com.ldroid.pbox.module.main.tools.PostalSmallToolsActivity;
+import com.ldroid.pbox.module.main.tools.ProfitToolsActivity;
+import com.ldroid.pbox.module.main.tools.WeightToolsActivity;
 
 import java.util.Arrays;
 
@@ -67,8 +74,45 @@ public class MainFragment extends BaseFragment {
 
 
     @OnClick(R.id.module_common)
-    public void onClickCommon(){
+    public void onClickCommon() {
         startAnimActivity(CommonToolsActivity.class);
+    }
+
+    @OnClick(R.id.module_eub)
+    public void onClickEub() {
+        startAnimActivity(EubToolsActivity.class);
+    }
+
+    @OnClick(R.id.module_small)
+    public void onClickSmall() {
+        startAnimActivity(PostalSmallToolsActivity.class);
+    }
+
+    @OnClick(R.id.module_big)
+    public void onClickBig() {
+        startAnimActivity(PostalBigToolsActivity.class);
+    }
+
+    @OnClick(R.id.module_ems)
+    public void onClickEms() {
+        startAnimActivity(EmsToolsActivity.class);
+    }
+
+    @OnClick(R.id.module_foreign)
+    public void onClickForeign() {
+        startAnimActivity(ForeignToolsActivity.class);
+    }
+
+
+    @OnClick(R.id.module_profit)
+    public void onClickProfit() {
+        startAnimActivity(ProfitToolsActivity.class);
+    }
+
+
+    @OnClick(R.id.module_weight)
+    public void onClickWeight() {
+        startAnimActivity(WeightToolsActivity.class);
     }
 
 

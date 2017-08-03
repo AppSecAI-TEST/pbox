@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:id="@+id/root"
                 android:background="@color/colorWhite"
                 android:orientation="vertical">
 
@@ -11,24 +12,18 @@
         android:paddingLeft="45dp"
         android:paddingRight="45dp">
 
-        <FrameLayout
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/bg_login_logo">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"/>
-
-        </FrameLayout>
+            android:layout_marginTop="80dp"
+            android:background="@drawable/bg_login_logo"/>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="45dp"
+            android:layout_marginTop="30dp"
             android:orientation="horizontal">
 
 
@@ -63,7 +58,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="1px"
+            android:layout_height="1.5px"
             android:background="@color/colorSeparator"/>
 
         <EditText

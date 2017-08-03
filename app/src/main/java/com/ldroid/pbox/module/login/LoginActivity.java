@@ -56,6 +56,9 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     @Override
     protected void initUI() {
+
+        setTranslucentStatus(R.color.colorWhite, 0);
+
         mCountDownTimer = new VerifyDownTimer(60000, 1000);
 
     }

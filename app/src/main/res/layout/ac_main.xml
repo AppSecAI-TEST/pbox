@@ -42,9 +42,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:drawableTop="@drawable/sel_main_footer_main"
                 android:text="首页"
                 android:textColor="@drawable/sel_txt_main_color"
-                android:textSize="14sp"/>
+                android:textSize="13sp"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -59,9 +60,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:drawableTop="@drawable/sel_main_footer_chart"
                 android:text="报表"
                 android:textColor="@drawable/sel_txt_main_color"
-                android:textSize="14sp"/>
+                android:textSize="13sp"/>
         </RelativeLayout>
 
 
@@ -79,9 +81,10 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
+                android:drawableTop="@drawable/sel_main_footer_me"
                 android:text="我的"
                 android:textColor="@drawable/sel_txt_main_color"
-                android:textSize="14sp"/>
+                android:textSize="13sp"/>
         </RelativeLayout>
 
     </LinearLayout>

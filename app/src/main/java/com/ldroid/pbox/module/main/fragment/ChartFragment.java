@@ -53,26 +53,6 @@ public class ChartFragment extends BaseFragment {
         mAdapter = new Adapter();
         mListView.setAdapter(mAdapter);
 
-        SwipeMenuCreator creator = new SwipeMenuCreator() {
-            @Override
-            public void create(SwipeMenu menu) {
-                createMenu2(menu);
-            }
-
-            private void createMenu2(SwipeMenu menu) {
-
-                SwipeMenuItem item = new SwipeMenuItem(getActivity());
-                item.setBackground(new ColorDrawable(Color.rgb(0xF9, 0x3F, 0x25)));
-                item.setWidth(DensityUtils.dp2px(getActivity(), 90));
-                item.setTitle("删除");
-                item.setTitleSize(18);
-                item.setTitleColor(Color.WHITE);
-                menu.addMenuItem(item);
-
-            }
-        };
-        SwipeMenuListView.class.cast(mListView.getWrappedList()).setMenuCreator(creator);
-
 
         // test
         ArrayList list = new ArrayList();

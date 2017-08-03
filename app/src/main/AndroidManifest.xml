@@ -37,6 +37,8 @@
         </activity>
         <activity android:name=".module.chart.SearchProductActivity">
         </activity>
+        <activity android:name=".module.main.tools.CommonToolsActivity">
+        </activity>
 
     </application>
 

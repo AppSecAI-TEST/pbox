@@ -12,10 +12,12 @@ import com.crazysunj.cardslideview.CardHandler;
 import com.crazysunj.cardslideview.CardViewPager;
 import com.ldroid.pbox.R;
 import com.ldroid.pbox.common.ui.BaseFragment;
+import com.ldroid.pbox.module.main.tools.CommonToolsActivity;
 
 import java.util.Arrays;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class MainFragment extends BaseFragment {
 
@@ -62,6 +64,13 @@ public class MainFragment extends BaseFragment {
             return view;
         }
     }
+
+
+    @OnClick(R.id.module_common)
+    public void onClickCommon(){
+        startAnimActivity(CommonToolsActivity.class);
+    }
+
 
     @Override
     protected void initListener() {

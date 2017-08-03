@@ -69,14 +69,15 @@
             android:textSize="15sp"/>
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="24dp"
             android:background="@color/colorWhite"
             android:hint="单位：cm"
-            android:textColorHint="@color/colorHint"
+            android:gravity="center_vertical"
             android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint"
             android:textSize="14sp"/>
     </LinearLayout>
 
@@ -127,7 +128,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="记抛基数"
+            android:text="货柜装箱"
             android:textColor="@color/colorText"
             android:textSize="15sp"/>
 
@@ -150,13 +151,12 @@
         android:background="@color/colorWhite"
         android:gravity="center"
         android:paddingTop="25dp"
-        android:text="抛重：2.5kg"
+        android:text="货物数量：20"
         android:textColor="@color/colorText"
         android:textSize="20sp"/>
 
-
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

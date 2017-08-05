@@ -25,10 +25,11 @@
         android:id="@id/bottom"
         android:layout_width="match_parent"
         android:layout_height="49dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="1dp"
         android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <RelativeLayout
             android:id="@+id/tab_main_main"

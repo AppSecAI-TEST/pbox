@@ -42,7 +42,7 @@
         android:drawablePadding="5dp"
         android:text="核价工具"
         android:textColor="@color/colorHint"
-        android:textSize="15sp"/>
+        android:textSize="14sp"/>
 
 
     <LinearLayout
@@ -65,7 +65,7 @@
             android:gravity="center_horizontal"
             android:text="通用"
             android:textColor="@color/colorText"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
 
         <TextView
             android:id="@+id/module_eub"
@@ -77,7 +77,7 @@
             android:gravity="center_horizontal"
             android:text="E邮宝"
             android:textColor="@color/colorText"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
 
         <TextView
             android:id="@+id/module_small"
@@ -89,7 +89,7 @@
             android:gravity="center_horizontal"
             android:text="挂号小包"
             android:textColor="@color/colorText"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
 
         <TextView
             android:id="@+id/module_big"
@@ -101,7 +101,7 @@
             android:gravity="center_horizontal"
             android:text="挂号大包"
             android:textColor="@color/colorText"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
 
     </LinearLayout>
 
@@ -110,6 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:orientation="horizontal"
+        android:paddingBottom="10dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:weightSum="4">
@@ -125,7 +126,7 @@
             android:gravity="center_horizontal"
             android:text="EMS"
             android:textColor="@color/colorText"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
 
         <TextView
             android:id="@+id/module_foreign"
@@ -137,7 +138,7 @@
             android:gravity="center_horizontal"
             android:text="海外仓"
             android:textColor="@color/colorText"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -149,9 +150,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="@color/colorText"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
 
     </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:background="@color/colorSeparator"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -162,7 +169,7 @@
         android:drawablePadding="5dp"
         android:text="辅助工具"
         android:textColor="@color/colorHint"
-        android:textSize="15sp"/>
+        android:textSize="14sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -184,7 +191,7 @@
             android:gravity="center_horizontal"
             android:text="成本利润"
             android:textColor="@color/colorText"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
 
         <TextView
             android:id="@+id/module_weight"
@@ -196,7 +203,7 @@
             android:gravity="center_horizontal"
             android:text="抛重换算"
             android:textColor="@color/colorText"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
 
         <TextView
             android:id="@+id/module_goods"
@@ -208,7 +215,7 @@
             android:gravity="center_horizontal"
             android:text="货柜装箱"
             android:textColor="@color/colorText"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
 
         <TextView
             android:id="@+id/textView8"
@@ -220,7 +227,7 @@
             android:gravity="center_horizontal"
             android:text="运费估算"
             android:textColor="@color/colorText"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
 
     </LinearLayout>
 
@@ -230,6 +237,7 @@
         android:layout_marginTop="15dp"
         android:orientation="horizontal"
         android:paddingLeft="20dp"
+        android:paddingBottom="10dp"
         android:paddingRight="20dp"
         android:weightSum="4">
 
@@ -243,7 +251,7 @@
             android:gravity="center_horizontal"
             android:text="物流跟踪"
             android:textColor="@color/colorText"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -259,8 +267,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
 
     </LinearLayout>
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:background="@color/colorSeparator"/>
 </LinearLayout>

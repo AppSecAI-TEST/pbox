@@ -6,14 +6,34 @@ android {
     defaultConfig {
         applicationId "com.ldroid.pbox"
         minSdkVersion 15
-        targetSdkVersion 25
+        targetSdkVersion 21
         versionCode 1
         versionName "1.0"
     }
+    signingConfigs {
+        debug {
+            // No debug config
+        }
+
+        // gradlew assembleRelease
+        release {
+            storeFile file("pbox.jks")
+            storePassword "123456"
+            keyAlias "pbox"
+            keyPassword "123456"
+        }
+    }
     buildTypes {
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+
         }
     }
 

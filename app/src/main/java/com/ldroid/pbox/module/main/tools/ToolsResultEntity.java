@@ -10,6 +10,9 @@ public class ToolsResultEntity {
     public String value2 ;
     public String value3 ;
 
+    public ToolsResultEntity() {
+    }
+
     public ToolsResultEntity(String key, String value1, String value2, String value3) {
         this.key = key;
         this.value1 = value1;

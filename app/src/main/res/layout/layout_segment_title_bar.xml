@@ -2,57 +2,58 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="fill_parent"
                 android:layout_height="48dp"
-                android:layout_gravity="top">
+                android:background="@drawable/bg_status_bar">
 
-    <RelativeLayout
-        android:id="@+id/rl_common_titlebar"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@drawable/bg_status_bar">
 
+    <FrameLayout
+        android:layout_width="160dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/bg_segment"
+        android:orientation="horizontal">
 
         <FrameLayout
-            android:layout_width="160dp"
-            android:layout_height="30dp"
-            android:layout_centerInParent="true"
-            android:background="@drawable/bg_segment"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/bg_segment_left"/>
-
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="right"
-                android:background="@drawable/bg_segment_right"
-                android:visibility="invisible"/>
-
-
+            android:id="@+id/layout_left"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/sel_segment_left"
+            android:tag="0">
 
             <TextView
-                android:layout_width="80dp"
+                android:id="@+id/tv_left"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:duplicateParentState="true"
                 android:gravity="center"
                 android:text="追踪"
-                android:textColor="@color/colorApp"
+                android:textColor="@color/segment_button_text_color"
                 android:textSize="16sp"/>
-
-
-            <TextView
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_gravity="right"
-                android:text="归档"
-                android:textColor="@color/colorWhite"
-                android:textSize="16sp"/>
-
 
         </FrameLayout>
 
-    </RelativeLayout>
+        <FrameLayout
+            android:id="@+id/layout_right"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="@drawable/sel_segment_right"
+            android:tag="1">
+
+
+            <TextView
+                android:id="@+id/tv_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:duplicateParentState="true"
+                android:text="归档"
+                android:textColor="@color/segment_button_text_color"
+                android:textSize="16sp"/>
+
+        </FrameLayout>
+
+
+    </FrameLayout>
 
 </RelativeLayout>

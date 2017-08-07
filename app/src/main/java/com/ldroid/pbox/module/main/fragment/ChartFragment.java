@@ -52,7 +52,8 @@ public class ChartFragment extends BaseFragment {
 
     @Override
     protected void initUI() {
-        initTopBarForRight("报表", null, getResources().getDrawable(R.drawable.icon_common_search));
+        initTopBarForRight("报表", null, getResources().getDrawable(R.drawable
+                .icon_common_search_white));
         mAdapter = new Adapter();
         mListView.setAdapter(mAdapter);
 

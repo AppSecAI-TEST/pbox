@@ -40,7 +40,7 @@ public class LogisticsFragment extends BaseFragment {
         ArrayList data = new ArrayList();
 
         for (int i = 0; i < 10; i++) {
-            data.add(new ToolsResultEntity());
+            data.add(new LogisticsEntity());
         }
         mAdapter.setListData(data);
     }
@@ -60,17 +60,28 @@ public class LogisticsFragment extends BaseFragment {
 
     }
 
-    class Adapter extends CommonAdapter<ToolsResultEntity> {
+    class Adapter extends CommonAdapter<LogisticsEntity> {
 
         public Adapter() {
             super(getActivity(), R.layout.layout_logistics_tools_item);
         }
 
         @Override
-        public void convert(ViewHolder holder, ToolsResultEntity item) {
-
+        public void convert(final ViewHolder holder, final LogisticsEntity item) {
+            holder.setOnClickListener(R.id.ll_logistic_item, new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    item.checked = !item.checked;
+                    holder.setVisible(R.id.ll_logistics_oper, item.checked);
+                    notifyDataSetChanged();
+                }
+            });
         }
 
 
+    }
+
+    class LogisticsEntity {
+        boolean checked;
     }
 }

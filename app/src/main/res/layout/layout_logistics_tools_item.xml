@@ -7,9 +7,10 @@
 
 
     <LinearLayout
+        android:id="@+id/ll_logistic_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginLeft="14dp"
         android:layout_marginRight="14dp"
         android:background="@drawable/btn_white_radius_stroke"
@@ -75,6 +76,47 @@
             android:text="2017-8-7 14:49:14"
             android:textColor="@color/colorHint"
             android:textSize="14sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_logistics_oper"
+        android:layout_width="match_parent"
+        android:layout_height="148dp"
+        android:visibility="gone"
+        android:background="@color/colorBackground"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="14dp"
+            android:drawableTop="@drawable/icon_logistics_archive"
+            android:gravity="center_horizontal"
+            android:text="归档"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="14dp"
+            android:drawableTop="@drawable/icon_logistics_top"
+            android:gravity="center_horizontal"
+            android:text="置顶"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="14dp"
+            android:drawableTop="@drawable/icon_logistics_del"
+            android:gravity="center_horizontal"
+            android:text="删除"
+            android:textSize="16sp"/>
+
+
     </LinearLayout>
 
 

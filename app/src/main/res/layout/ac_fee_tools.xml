@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_common_title_bar"></include>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:drawablePadding="10dp"
+            android:layout_centerInParent="true"
+            android:drawableRight="@drawable/icon_common_edit_pen"
+            android:gravity="center"
+            android:text="EMS"
+            android:textColor="@color/colorApp"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_marginTop="1.5px"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="长"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="24dp"
+            android:background="@color/colorWhite"
+            android:gravity="center_vertical"
+            android:hint="单位：cm"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_marginTop="1.5px"
+        android:background="@color/colorWhite"
+
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="宽"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="24dp"
+            android:background="@color/colorWhite"
+            android:gravity="center_vertical"
+            android:hint="单位：cm"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_marginTop="1.5px"
+        android:background="@color/colorWhite"
+
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="高"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="24dp"
+            android:background="@color/colorWhite"
+            android:gravity="center_vertical"
+            android:hint="单位：cm"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1.5px"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"
+        android:paddingBottom="20dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="货柜装箱"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="24dp"
+            android:text="324"
+            android:textColor="@color/colorText"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_white_radius_stroke"
+        android:orientation="vertical"
+        android:paddingBottom="25dp"
+        android:paddingTop="25dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="货物数量：20"
+            android:textColor="@color/colorText"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorWhite"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:text="查询仅供参考"
+            android:textColor="@color/colorHint"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_white_radius_stroke"
+        android:orientation="vertical"
+        android:paddingBottom="25dp"
+        android:paddingTop="25dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="货物数量：20"
+            android:textColor="@color/colorText"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorWhite"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:text="查询仅供参考"
+            android:textColor="@color/colorHint"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="45dp"
+        android:paddingRight="45dp">
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/btn_app_radius_n"
+            android:text="查询"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

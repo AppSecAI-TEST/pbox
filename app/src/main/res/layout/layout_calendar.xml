@@ -20,7 +20,7 @@
             android:layout_marginLeft="7dp"
             android:layout_marginRight="7dp"
             android:drawablePadding="5dp"
-            android:drawableRight="@drawable/icon_chart_edit_year"
+            android:drawableRight="@drawable/icon_common_edit_pen"
             android:gravity="center"
             android:text="2014年6月"
             android:textColor="@color/colorApp"

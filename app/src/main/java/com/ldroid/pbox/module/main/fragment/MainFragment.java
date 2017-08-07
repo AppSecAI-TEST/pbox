@@ -17,6 +17,7 @@ import com.ldroid.pbox.module.main.tools.EmsToolsActivity;
 import com.ldroid.pbox.module.main.tools.EubToolsActivity;
 import com.ldroid.pbox.module.main.tools.ForeignToolsActivity;
 import com.ldroid.pbox.module.main.tools.GoodsToolsActivity;
+import com.ldroid.pbox.module.main.tools.LogisticsToolsActivity;
 import com.ldroid.pbox.module.main.tools.PostalBigToolsActivity;
 import com.ldroid.pbox.module.main.tools.PostalSmallToolsActivity;
 import com.ldroid.pbox.module.main.tools.ProfitToolsActivity;
@@ -119,6 +120,11 @@ public class MainFragment extends BaseFragment {
     @OnClick(R.id.module_goods)
     public void onClickGoods() {
         startAnimActivity(GoodsToolsActivity.class);
+    }
+
+    @OnClick(R.id.module_logistics)
+    public void onClickLogistics() {
+        startAnimActivity(LogisticsToolsActivity.class);
     }
 
 

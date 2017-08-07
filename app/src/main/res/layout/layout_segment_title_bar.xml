@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="top">
+
+    <RelativeLayout
+        android:id="@+id/rl_common_titlebar"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/bg_status_bar">
+
+
+        <FrameLayout
+            android:layout_width="160dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_segment"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_segment_left"/>
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@drawable/bg_segment_right"
+                android:visibility="invisible"/>
+
+
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="追踪"
+                android:textColor="@color/colorApp"
+                android:textSize="16sp"/>
+
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_gravity="right"
+                android:text="归档"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"/>
+
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

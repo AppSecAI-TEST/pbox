@@ -16,6 +16,7 @@
         android:background="@color/colorWhite">
 
         <TextView
+            android:id="@+id/tv_edit_channel"
             android:layout_width="wrap_content"
             android:layout_height="38dp"
             android:drawablePadding="10dp"

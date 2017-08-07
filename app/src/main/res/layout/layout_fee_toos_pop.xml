@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/colorWhite"
+              android:orientation="vertical">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="选择渠道"
+        android:textColor="@color/colorHint"
+        android:textSize="16sp"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:paddingTop="30dp">
+
+        <TextView
+            android:id="@+id/tv_small"
+            android:layout_width="fill_parent"
+            android:layout_height="55dp"
+            android:background="@color/colorWhite"
+            android:gravity="center"
+            android:tag="small"
+            android:text="挂号小包"
+            android:textColor="@color/colorText"
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1.5px"
+            android:background="@color/colorSeparator"/>
+
+        <TextView
+            android:id="@+id/tv_big"
+            android:layout_width="fill_parent"
+            android:layout_height="55dp"
+            android:background="@color/colorWhite"
+            android:gravity="center"
+            android:text="挂号大包"
+            android:tag="big"
+            android:textColor="@color/colorText"
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1.5px"
+            android:background="@color/colorSeparator"/>
+
+
+        <TextView
+            android:id="@+id/tv_ems"
+            android:layout_width="fill_parent"
+            android:layout_height="55dp"
+            android:background="@color/colorWhite"
+            android:gravity="center"
+            android:text="EMS"
+            android:tag="EMS"
+            android:textColor="@color/colorText"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+</LinearLayout>

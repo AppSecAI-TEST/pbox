@@ -4,13 +4,18 @@
 package com.ldroid.pbox.interactor;
 
 import com.google.gson.reflect.TypeToken;
+import com.ldroid.pbox.common.entities.BaseEntity;
 import com.ldroid.pbox.common.entities.OutputDataEntity;
+import com.ldroid.pbox.common.entities.OutputEntity;
 import com.ldroid.pbox.common.mvp.BaseInteractor;
 import com.ldroid.pbox.common.net.ActionConstants;
 import com.ldroid.pbox.common.net.ResponseListener;
 import com.ldroid.pbox.entities.in.LoginInEntity;
 import com.ldroid.pbox.entities.in.RegisterInEntity;
 import com.ldroid.pbox.entities.in.SmsCodeInEntity;
+import com.ldroid.pbox.entities.in.UserAvatarInEntity;
+import com.ldroid.pbox.entities.in.UserNickNameInEntity;
+import com.ldroid.pbox.entities.in.UserPhoneInEntity;
 import com.ldroid.pbox.entities.in.UserWidgetsInEntity;
 import com.ldroid.pbox.entities.out.SmsOutEntity;
 import com.ldroid.pbox.entities.out.UserOutEntity;
@@ -28,19 +33,26 @@ public class UserInteractor extends BaseInteractor {
 
     }
 
-    public void reqChangeNickName(RegisterInEntity in,
-                            ResponseListener<OutputDataEntity<UserOutEntity>> listener) {
-        in.setMethod(ActionConstants.REGISTER);
-        performRequest(in, listener, new TypeToken<OutputDataEntity<UserOutEntity>>() {
+    public void reqChangeNickName(UserNickNameInEntity in,
+                                  ResponseListener<OutputEntity> listener) {
+        in.setMethod(ActionConstants.CHANGE_NICKNAME);
+        performRequest(in, listener, new TypeToken<OutputEntity>() {
         }.getType(), TAG);
 
     }
 
+    public void reqChangePhone(UserPhoneInEntity in,
+                               ResponseListener<OutputEntity> listener) {
+        in.setMethod(ActionConstants.CHANGE_PHONE);
+        performRequest(in, listener, new TypeToken<OutputEntity>() {
+        }.getType(), TAG);
 
-    public void reqLogin(LoginInEntity in,
-                         ResponseListener<OutputDataEntity<UserOutEntity>> listener) {
-        in.setMethod(ActionConstants.LOGIN);
-        performRequest(in, listener, new TypeToken<OutputDataEntity<UserOutEntity>>() {
+    }
+
+    public void reqChangeAvatar(UserAvatarInEntity in,
+                                ResponseListener<OutputEntity> listener) {
+        in.setMethod(ActionConstants.CHANGE_AVATAR);
+        performRequest(in, listener, new TypeToken<OutputEntity>() {
         }.getType(), TAG);
 
     }

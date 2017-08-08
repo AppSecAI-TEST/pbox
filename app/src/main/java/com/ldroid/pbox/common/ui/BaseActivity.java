@@ -12,6 +12,8 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -27,6 +29,7 @@ import butterknife.ButterKnife;
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener{
 
     public Context mContext;
+    private ProgressDialog mProgressDialog ;
 
 
     @Override
@@ -183,11 +186,11 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     }
 
 
-    private ProgressDialog mProgressDialog ;
     public void showProgressDialog(String msg){
         if(mProgressDialog == null){
             mProgressDialog = new ProgressDialog(this);
         }
+        msg = TextUtils.isEmpty(msg) ? "请稍等..." : msg ;
         mProgressDialog.setMessage(msg);
         mProgressDialog.show();
     }

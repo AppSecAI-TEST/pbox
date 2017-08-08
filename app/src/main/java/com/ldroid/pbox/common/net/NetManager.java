@@ -1,7 +1,10 @@
 package com.ldroid.pbox.common.net;
 
+import android.util.Log;
+
 import com.ldroid.pbox.common.lib.volley.Request;
 import com.ldroid.pbox.common.lib.volley.RequestQueue;
+import com.ldroid.pbox.common.util.JsonUtils;
 
 public class NetManager {
 
@@ -25,6 +28,18 @@ public class NetManager {
 	public <T> void addToRequestQueue(Request<T> req, String tag) {
 		if (mRequestQueue != null) {
 			mRequestQueue.addToRequestQueue(req, tag);
+		}
+		print((GsonRequest<T>) req, tag);
+
+	}
+
+	private <T> void print(GsonRequest<T> req, String tag) {
+		try {
+			GsonRequest<T> cReq = req;
+			String sUrl = "url=[ " + cReq.getUrl() + " ]  params= ["
+					+ JsonUtils.toJson(cReq.getParams()) + " ]";
+			Log.d(tag == null ? TAG : tag, sUrl);
+		} catch (Exception e) {
 		}
 	}
 

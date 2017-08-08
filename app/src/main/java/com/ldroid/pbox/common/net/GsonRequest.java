@@ -1,5 +1,7 @@
 package com.ldroid.pbox.common.net;
 
+import android.util.Log;
+
 import com.google.gson.JsonSyntaxException;
 import com.ldroid.pbox.common.entities.InputEntity;
 import com.ldroid.pbox.common.lib.volley.AuthFailureError;
@@ -66,8 +68,9 @@ public class GsonRequest<T> extends Request<T> {
 			// applicaton/json
 			JSONObject jsonResponse = new JSONObject(jsonString) ;
 			T parsedGSON = JsonUtils.fromJson(jsonResponse.toString(), mTypeOfT);
-//			return (Response<T>) Response.success(new JSONObject(jsonString),
-//					HttpHeaderParser.parseCacheHeaders(response));
+
+			Log.d(String.valueOf(getTag()), jsonResponse.toString());
+
 			return Response.success(parsedGSON, HttpHeaderParser.parseCacheHeaders(response));
 		} catch (UnsupportedEncodingException e) {
 			return Response.error(new ParseError(e));

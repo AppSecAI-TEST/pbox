@@ -6,6 +6,7 @@ import android.widget.Button;
 
 import com.ldroid.pbox.R;
 import com.ldroid.pbox.common.ui.BaseActivity;
+import com.ldroid.pbox.entities.out.UserOutEntity;
 import com.ldroid.pbox.module.main.MainActivity;
 
 import butterknife.BindView;
@@ -128,6 +129,11 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     @Override
     public void onRespLogin() {
+
+    }
+
+    @Override
+    public void onRespRegister(UserOutEntity data) {
 
     }
 

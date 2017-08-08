@@ -5,6 +5,7 @@ package com.ldroid.pbox.common.ui;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -179,6 +180,22 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         findViewById(R.id.rl_title_bar_right).setVisibility(View.VISIBLE);
         findViewById(R.id.rl_title_bar_left).setOnClickListener(this);
         findViewById(R.id.rl_title_bar_right).setOnClickListener(this);
+    }
+
+
+    private ProgressDialog mProgressDialog ;
+    public void showProgressDialog(String msg){
+        if(mProgressDialog == null){
+            mProgressDialog = new ProgressDialog(this);
+        }
+        mProgressDialog.setMessage(msg);
+        mProgressDialog.show();
+    }
+
+    public void dismissPorgressDialog(){
+        if(mProgressDialog != null){
+            mProgressDialog.dismiss(); ;
+        }
     }
 
 

@@ -12,6 +12,9 @@ import com.ldroid.pbox.common.lib.volley.Response.Listener;
 import com.ldroid.pbox.common.lib.volley.toolbox.HttpHeaderParser;
 import com.ldroid.pbox.common.util.JsonUtils;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -60,12 +63,18 @@ public class GsonRequest<T> extends Request<T> {
 		try {
 			String jsonString = new String(response.data,
 					HttpHeaderParser.parseCharset(response.headers));
-			T parsedGSON = JsonUtils.fromJson(jsonString, mTypeOfT);
+			// applicaton/json
+			JSONObject jsonResponse = new JSONObject(jsonString) ;
+			T parsedGSON = JsonUtils.fromJson(jsonResponse.toString(), mTypeOfT);
+//			return (Response<T>) Response.success(new JSONObject(jsonString),
+//					HttpHeaderParser.parseCacheHeaders(response));
 			return Response.success(parsedGSON, HttpHeaderParser.parseCacheHeaders(response));
 		} catch (UnsupportedEncodingException e) {
 			return Response.error(new ParseError(e));
 		} catch (JsonSyntaxException je) {
 			return Response.error(new ParseError(je));
+		} catch (JSONException e) {
+			return Response.error(new ParseError(e));
 		}
 	}
 
@@ -77,7 +86,7 @@ public class GsonRequest<T> extends Request<T> {
 	@Override
 	public Map<String, String> getHeaders() throws AuthFailureError {
 		HashMap<String, String> headers = new HashMap<String, String>();
-		headers.put("Accept-Encoding", "gzip");
+		//headers.put("Accept-Encoding", "gzip");
 		return headers;
 	}
 

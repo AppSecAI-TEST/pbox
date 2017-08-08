@@ -3,10 +3,11 @@ package com.ldroid.pbox.module.login;
 import android.content.Context;
 import android.os.CountDownTimer;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.ldroid.pbox.R;
 import com.ldroid.pbox.common.ui.BaseActivity;
-import com.ldroid.pbox.module.main.MainActivity;
+import com.ldroid.pbox.common.util.ToastUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -14,8 +15,13 @@ import butterknife.OnClick;
 public class RegisterActivity extends BaseActivity implements LoginContract.View {
 
 
+    private LoginPresenter mPresenter;
+
     @BindView(R.id.btn_sms)
     Button mBtnVerify;
+
+    @BindView(R.id.et_phone)
+    EditText mEtPhoen;
 
 
     private VerifyDownTimer mCountDownTimer;
@@ -46,7 +52,7 @@ public class RegisterActivity extends BaseActivity implements LoginContract.View
 
     @Override
     protected void initPreparation() {
-
+        mPresenter = new LoginPresenter(this);
     }
 
     @Override
@@ -75,29 +81,32 @@ public class RegisterActivity extends BaseActivity implements LoginContract.View
 
 
     private void reqSendSms() {
+        String phone = mEtPhoen.getText().toString();
+        mPresenter.reqSmsCode(phone);
         mCountDownTimer.start();
         mBtnVerify.setEnabled(false);
+
     }
 
 
     @Override
     public Context getContext() {
-        return null;
+        return this;
     }
 
     @Override
     public void showLoading(String msg) {
-
+        showProgressDialog(msg);
     }
 
     @Override
     public void dismissLoading() {
-
+        dismissPorgressDialog();
     }
 
     @Override
     public void onError(String msg) {
-
+        ToastUtils.showLongToast(mContext, msg);
     }
 
     @Override
@@ -108,6 +117,11 @@ public class RegisterActivity extends BaseActivity implements LoginContract.View
     @Override
     protected void initData() {
 
+    }
+
+    @Override
+    public void onRespSmsCode(String phone) {
+        ToastUtils.showLongToast(mContext, "获取验证码成功：" + phone);
     }
 
     @Override

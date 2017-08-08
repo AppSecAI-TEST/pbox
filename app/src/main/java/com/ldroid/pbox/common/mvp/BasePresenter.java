@@ -7,7 +7,7 @@ public interface BasePresenter {
 
 
 	public interface Code {
-		String SUCCESS = "";
+		String SUCCESS = "0";
 	}
 
 }

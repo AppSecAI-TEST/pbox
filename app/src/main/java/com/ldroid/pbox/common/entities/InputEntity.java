@@ -10,38 +10,40 @@ import java.util.Map;
 
 public abstract class InputEntity {
 
-	protected ArrayList<String> errors = new ArrayList<String>();
+    protected ArrayList<String> errors = new ArrayList<String>();
 
-	protected String method;
+    protected String method;
 
-	public void setMethod(String method) {
-		this.method = method;
-	}
+    public void setMethod(String method) {
+        this.method = method;
+    }
 
-	public Boolean checkInput() {
-		return true;
-	}
+    public Boolean checkInput() {
+        return true;
+    }
 
-	public ArrayList<String> getErrors() {
-		return this.errors;
-	}
+    public ArrayList<String> getErrors() {
+        return this.errors;
+    }
 
-	public Map<String, String> getParams() {
-		HashMap<String, String> params = new HashMap<String, String>();
-		params.put("data", jsonThis());
-		return params;
-	}
-	
-	public String jsonThis() {
-		return JsonUtils.toJson(this);
-	}
+    public Map<String, String> getParams() {
+        HashMap<String, String> params = new HashMap<>();
+        //params.put("data", jsonThis());
+        params.put("appid", "92a9ec6a-7c67-422a-8011-c32d24361ee8");
+        params.put("timestamp", String.valueOf(System.currentTimeMillis()));
+        return params;
+    }
 
-	public String getUrlPrefix() {
-		return AppAssembly.getUrl();
-	}
+    public String jsonThis() {
+        return JsonUtils.toJson(this);
+    }
 
-	public String getUrl() {
-		return new StringBuffer().append(getUrlPrefix()).append(method).toString();
-	}
+    public String getUrlPrefix() {
+        return AppAssembly.getUrl();
+    }
+
+    public String getUrl() {
+        return new StringBuffer().append(getUrlPrefix()).append(method).toString();
+    }
 
 }

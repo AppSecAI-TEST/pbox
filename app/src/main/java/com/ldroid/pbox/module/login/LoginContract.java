@@ -7,13 +7,17 @@ import com.ldroid.pbox.common.mvp.BaseView;
 
 public interface LoginContract {
 
-	interface View extends BaseView {
-		void onRespLogin();
-	}
+    interface View extends BaseView {
+        void onRespSmsCode(String phone);
 
-	interface Presenter extends BasePresenter {
+        void onRespLogin();
+    }
 
-		void reqLogin(@NonNull String phone, @NonNull String pwd);
+    interface Presenter extends BasePresenter {
 
-	}
+        void reqLogin(@NonNull String phone, @NonNull String pwd);
+
+        void reqSmsCode(@NonNull String phone);
+
+    }
 }

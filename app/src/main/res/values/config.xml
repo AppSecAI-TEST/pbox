@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <bool name="env_release">false</bool>
+
+    <string name="url_release">https://www.ipricebox.com/</string>
+    <string name="url_debug">https://www.ipricebox.com/</string>
+
+</resources>

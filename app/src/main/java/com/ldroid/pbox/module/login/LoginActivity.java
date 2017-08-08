@@ -17,7 +17,6 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     @BindView(R.id.btn_sms)
     Button mBtnVerify;
 
-
     private VerifyDownTimer mCountDownTimer;
 
     class VerifyDownTimer extends CountDownTimer {
@@ -119,6 +118,11 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     @Override
     protected void initData() {
+
+    }
+
+    @Override
+    public void onRespSmsCode(String phone) {
 
     }
 

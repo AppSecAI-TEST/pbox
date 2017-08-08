@@ -44,4 +44,12 @@ public class ConfigDao {
         return JsonUtils.fromJson(user, UserOutEntity.class);
     }
 
+    public void setCookie(String s) {
+        mEditor.putString("user_cookie", s).commit();
+    }
+
+    public String getCookie() {
+        return mSharePref.getString("user_cookie", null);
+    }
+
 }

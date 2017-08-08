@@ -15,33 +15,7 @@ import butterknife.OnClick;
 public class LoginActivity extends BaseActivity implements LoginContract.View {
 
 
-    @BindView(R.id.btn_sms)
-    Button mBtnVerify;
 
-    private VerifyDownTimer mCountDownTimer;
-
-    class VerifyDownTimer extends CountDownTimer {
-
-        public VerifyDownTimer(long millisInFuture, long countDownInterval) {
-            super(millisInFuture, countDownInterval);
-        }
-
-        @Override
-        public void onTick(long millisUntilFinished) {
-            if (mBtnVerify != null) {
-                mBtnVerify.setText(String.valueOf(millisUntilFinished / 1000) + "″");
-            }
-        }
-
-        @Override
-        public void onFinish() {
-            if (mBtnVerify != null) {
-                mBtnVerify.setText("获取验证码");
-                mBtnVerify.setEnabled(true);
-            }
-        }
-
-    }
 
 
     @Override
@@ -59,15 +33,9 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
         setTranslucentStatus(R.color.colorWhite, 0);
 
-        mCountDownTimer = new VerifyDownTimer(60000, 1000);
 
     }
 
-
-    @OnClick(R.id.btn_sms)
-    public void onClickSms() {
-        reqSendSms();
-    }
 
     @OnClick(R.id.btn_login)
     public void onClickLogin() {
@@ -85,11 +53,6 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     public void onClickGuest() {
     }
 
-
-    private void reqSendSms() {
-        mCountDownTimer.start();
-        mBtnVerify.setEnabled(false);
-    }
 
 
     @Override
@@ -137,11 +100,4 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     }
 
-    @Override
-    protected void onDestroy() {
-        if (mCountDownTimer != null) {
-            mCountDownTimer.cancel();
-        }
-        super.onDestroy();
-    }
 }

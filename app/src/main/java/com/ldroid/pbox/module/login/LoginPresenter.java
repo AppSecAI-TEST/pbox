@@ -66,8 +66,9 @@ public class LoginPresenter implements LoginContract.Presenter {
 
 
     @Override
-    public void reqRegister(@NonNull String nickname, @NonNull String phone, @NonNull String code) {
-        final RegisterInEntity in = new RegisterInEntity(nickname, phone, code);
+    public void reqRegister(@NonNull String nickname, @NonNull String phone, @NonNull String
+            code,@NonNull String password) {
+        final RegisterInEntity in = new RegisterInEntity(nickname, phone, code,password);
         if (!in.checkInput()) {
             mView.onError(in.getErrors().get(0));
             return;

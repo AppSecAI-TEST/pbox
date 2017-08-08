@@ -12,6 +12,7 @@ public interface LoginContract {
         void onRespSmsCode(String phone);
         void onRespLogin();
         void onRespRegister(UserOutEntity data);
+//        void onRespLogin(UserOutEntity data);
     }
 
     interface Presenter extends BasePresenter {
@@ -20,7 +21,8 @@ public interface LoginContract {
 
         void reqSmsCode(@NonNull String phone);
 
-        void reqRegister(@NonNull String nickname, @NonNull String phone, @NonNull String code);
+        void reqRegister(@NonNull String nickname, @NonNull String phone, @NonNull String code,
+                         @NonNull String password);
 
     }
 }

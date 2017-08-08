@@ -4,6 +4,7 @@ import android.text.TextUtils;
 
 import com.google.gson.annotations.Expose;
 import com.ldroid.pbox.common.entities.InputEntity;
+import com.ldroid.pbox.common.util.DigestUtils;
 
 import java.util.Map;
 
@@ -16,12 +17,15 @@ public class RegisterInEntity extends InputEntity {
     public String phone;
     @Expose
     public String code;
+    @Expose
+    public String password;
 
 
-    public RegisterInEntity(String nickname, String phone, String code) {
+    public RegisterInEntity(String nickname, String phone, String code, String password) {
         this.nickname = nickname;
         this.phone = phone;
         this.code = code;
+        this.password = password;
     }
 
     @Override
@@ -30,6 +34,7 @@ public class RegisterInEntity extends InputEntity {
         params.put("nickname", nickname);
         params.put("phone", phone);
         params.put("code", code);
+        params.put("password", DigestUtils.md5(password));
         return params;
     }
 
@@ -50,6 +55,10 @@ public class RegisterInEntity extends InputEntity {
         }
         if (TextUtils.isEmpty(code)) {
             errors.add("请输入验证码");
+            return false;
+        }
+        if (TextUtils.isEmpty(password)) {
+            errors.add("请输入密码");
             return false;
         }
         return true;

@@ -29,6 +29,8 @@ public class RegisterActivity extends BaseActivity implements LoginContract.View
     EditText mEtName;
     @BindView(R.id.et_code)
     EditText mEtCode;
+    @BindView(R.id.et_pwd)
+    EditText mEtPwd;
 
 
     private VerifyDownTimer mCountDownTimer;
@@ -87,7 +89,8 @@ public class RegisterActivity extends BaseActivity implements LoginContract.View
         String phone = mEtPhoen.getText().toString();
         String nickname = mEtName.getText().toString();
         String code = mEtCode.getText().toString();
-        mPresenter.reqRegister(nickname, phone, code);
+        String password = mEtPwd.getText().toString();
+        mPresenter.reqRegister(nickname, phone, code,password);
 
     }
 

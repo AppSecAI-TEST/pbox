@@ -5,7 +5,6 @@ package com.ldroid.pbox.interactor;
 
 import com.google.gson.reflect.TypeToken;
 import com.ldroid.pbox.common.entities.OutputDataEntity;
-import com.ldroid.pbox.common.entities.OutputEntity;
 import com.ldroid.pbox.common.mvp.BaseInteractor;
 import com.ldroid.pbox.common.net.ActionConstants;
 import com.ldroid.pbox.common.net.ResponseListener;
@@ -21,12 +20,8 @@ import com.ldroid.pbox.entities.in.ToolsPZHSInEntity;
 import com.ldroid.pbox.entities.in.ToolsTYInEntity;
 import com.ldroid.pbox.entities.in.ToolsWLZZInEntity;
 import com.ldroid.pbox.entities.in.ToolsYFGSInEntity;
-import com.ldroid.pbox.entities.in.UserAvatarInEntity;
-import com.ldroid.pbox.entities.in.UserNickNameInEntity;
-import com.ldroid.pbox.entities.in.UserPhoneInEntity;
-import com.ldroid.pbox.entities.in.UserWidgetsInEntity;
 import com.ldroid.pbox.entities.out.ToolsCBLROutEntity;
-import com.ldroid.pbox.entities.out.ToolsCountrysEntity;
+import com.ldroid.pbox.entities.out.ToolsCountrysOutEntity;
 import com.ldroid.pbox.entities.out.ToolsEMSOutEntity;
 import com.ldroid.pbox.entities.out.ToolsEYBOutEntity;
 import com.ldroid.pbox.entities.out.ToolsGHDBOutEntity;
@@ -37,7 +32,6 @@ import com.ldroid.pbox.entities.out.ToolsPZHSOutEntity;
 import com.ldroid.pbox.entities.out.ToolsTYOutEntity;
 import com.ldroid.pbox.entities.out.ToolsWLZZOutEntity;
 import com.ldroid.pbox.entities.out.ToolsYFGSOutEntity;
-import com.ldroid.pbox.entities.out.UserWidgetsOutEntity;
 
 public class ToolsInteractor extends BaseInteractor {
 
@@ -92,9 +86,9 @@ public class ToolsInteractor extends BaseInteractor {
     }
 
     public void reqToolsCountrys(ToolsCountrysInEntity in,
-                                 ResponseListener<OutputDataEntity<ToolsCountrysEntity>> listener) {
+                                 ResponseListener<OutputDataEntity<ToolsCountrysOutEntity>> listener) {
         in.setMethod(ActionConstants.TOOLS_COUNTRYS);
-        performRequest(in, listener, new TypeToken<OutputDataEntity<ToolsCountrysEntity>>() {
+        performRequest(in, listener, new TypeToken<OutputDataEntity<ToolsCountrysOutEntity>>() {
         }.getType(), TAG);
 
     }

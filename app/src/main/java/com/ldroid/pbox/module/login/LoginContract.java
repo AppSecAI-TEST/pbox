@@ -10,7 +10,7 @@ public interface LoginContract {
 
     interface View extends BaseView {
         void onRespSmsCode(String phone);
-        void onRespLogin();
+        void onRespLogin(UserOutEntity data);
         void onRespRegister(UserOutEntity data);
 //        void onRespLogin(UserOutEntity data);
     }

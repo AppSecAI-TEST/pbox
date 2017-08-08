@@ -140,7 +140,7 @@ public class RegisterActivity extends BaseActivity implements LoginContract.View
     }
 
     @Override
-    public void onRespLogin() {
+    public void onRespLogin(UserOutEntity data) {
 
     }
 
@@ -149,6 +149,7 @@ public class RegisterActivity extends BaseActivity implements LoginContract.View
         ConfigDao.getInstance().setUser(data);
         ToastUtils.showLongToast(mContext, "注册成功");
         startAnimActivity(MainActivity.class);
+        finish();
     }
 
     @Override

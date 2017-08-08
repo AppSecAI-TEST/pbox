@@ -14,6 +14,16 @@ public class UserOutEntity extends BaseEntity {
     @Expose public String UserCode;
     @Expose public String Phone;
     @Expose public String NickName;
+    @Expose public String Avatar;
+    @Expose public String IsSubscribed;
+    @Expose public String SubscribeType;
+    @Expose public String SubscribeStartTime;
+    @Expose public String SubscribeEndTime;
     @Expose public String RegisteredTime;
+    @Expose public String UpdatedTime;
+
+
+
+
 
 }

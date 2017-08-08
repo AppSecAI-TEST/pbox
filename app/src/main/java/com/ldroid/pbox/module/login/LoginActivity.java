@@ -1,11 +1,12 @@
 package com.ldroid.pbox.module.login;
 
 import android.content.Context;
-import android.os.CountDownTimer;
-import android.widget.Button;
+import android.widget.EditText;
 
 import com.ldroid.pbox.R;
 import com.ldroid.pbox.common.ui.BaseActivity;
+import com.ldroid.pbox.common.util.ToastUtils;
+import com.ldroid.pbox.dao.ConfigDao;
 import com.ldroid.pbox.entities.out.UserOutEntity;
 import com.ldroid.pbox.module.main.MainActivity;
 
@@ -15,12 +16,16 @@ import butterknife.OnClick;
 public class LoginActivity extends BaseActivity implements LoginContract.View {
 
 
+    private LoginContract.Presenter mPresenter;
 
-
+    @BindView(R.id.et_phone)
+    EditText mEtPhone;
+    @BindView(R.id.et_pwd)
+    EditText mEtPwd;
 
     @Override
     protected void initPreparation() {
-
+        mPresenter = new LoginPresenter(this);
     }
 
     @Override
@@ -39,8 +44,9 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     @OnClick(R.id.btn_login)
     public void onClickLogin() {
-        startAnimActivity(MainActivity.class);
-        finish();
+        String phone = mEtPhone.getText().toString();
+        String password = mEtPwd.getText().toString();
+        mPresenter.reqLogin(phone, password);
     }
 
     @OnClick(R.id.tv_register)
@@ -54,25 +60,24 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     }
 
 
-
     @Override
     public Context getContext() {
-        return null;
+        return this;
     }
 
     @Override
     public void showLoading(String msg) {
-
+        showProgressDialog(msg);
     }
 
     @Override
     public void dismissLoading() {
-
+        dismissPorgressDialog();
     }
 
     @Override
     public void onError(String msg) {
-
+        ToastUtils.showLongToast(mContext, msg);
     }
 
     @Override
@@ -91,8 +96,10 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     }
 
     @Override
-    public void onRespLogin() {
-
+    public void onRespLogin(UserOutEntity data) {
+        ConfigDao.getInstance().setUser(data);
+        ToastUtils.showLongToast(mContext, "登录成功");
+        startAnimActivity(MainActivity.class);
     }
 
     @Override

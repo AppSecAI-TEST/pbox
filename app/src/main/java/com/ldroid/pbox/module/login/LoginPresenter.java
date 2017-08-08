@@ -12,9 +12,8 @@ import com.ldroid.pbox.common.net.ResponseListener;
 import com.ldroid.pbox.entities.in.LoginInEntity;
 import com.ldroid.pbox.entities.in.RegisterInEntity;
 import com.ldroid.pbox.entities.in.SmsCodeInEntity;
-import com.ldroid.pbox.entities.out.LoginOutEntity;
-import com.ldroid.pbox.entities.out.UserOutEntity;
 import com.ldroid.pbox.entities.out.SmsOutEntity;
+import com.ldroid.pbox.entities.out.UserOutEntity;
 import com.ldroid.pbox.interactor.LoginInteractor;
 
 public class LoginPresenter implements LoginContract.Presenter {
@@ -67,8 +66,8 @@ public class LoginPresenter implements LoginContract.Presenter {
 
     @Override
     public void reqRegister(@NonNull String nickname, @NonNull String phone, @NonNull String
-            code,@NonNull String password) {
-        final RegisterInEntity in = new RegisterInEntity(nickname, phone, code,password);
+            code, @NonNull String password) {
+        final RegisterInEntity in = new RegisterInEntity(nickname, phone, code, password);
         if (!in.checkInput()) {
             mView.onError(in.getErrors().get(0));
             return;
@@ -100,23 +99,23 @@ public class LoginPresenter implements LoginContract.Presenter {
     }
 
     @Override
-    public void reqLogin(@NonNull String utel, @NonNull String upwd) {
-        final LoginInEntity in = new LoginInEntity(utel, upwd);
+    public void reqLogin(@NonNull String phone, @NonNull String password) {
+        final LoginInEntity in = new LoginInEntity(phone, password);
         if (!in.checkInput()) {
             mView.onError(in.getErrors().get(0));
             return;
         }
         mView.showLoading(null);
-        mInteractor.reqLogin(in, new ResponseListener<OutputDataEntity<LoginOutEntity>>() {
+        mInteractor.reqLogin(in, new ResponseListener<OutputDataEntity<UserOutEntity>>() {
 
             @Override
-            public void onResponse(OutputDataEntity<LoginOutEntity> response) {
+            public void onResponse(OutputDataEntity<UserOutEntity> response) {
                 mView.dismissLoading();
                 if (response == null) {
                     mView.onError(mView.getContext().getString(R.string.common_net_error));
                 } else {
                     if (Code.SUCCESS.equals(response.code)) {
-                        mView.onRespLogin();
+                        mView.onRespLogin(response.data);
                     } else {
                         mView.onError(response.getErrorMsg());
                     }

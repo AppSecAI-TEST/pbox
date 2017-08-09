@@ -9,107 +9,7 @@
 
     <include layout="@layout/layout_common_title_bar"></include>
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:background="@color/colorWhite"
-        android:gravity="center"
-        android:text="包装尺寸"
-        android:textColor="@color/colorHint"
-        android:textSize="14sp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="39dp"
-        android:layout_marginTop="1.5px"
-        android:background="@color/colorWhite"
-        android:orientation="horizontal"
-        android:paddingLeft="16dp"
-
-        android:paddingRight="16dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="长"
-            android:textColor="@color/colorText"
-            android:textSize="15sp"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="24dp"
-            android:background="@color/colorWhite"
-            android:gravity="center_vertical"
-            android:hint="单位：cm"
-            android:textColor="@color/colorText"
-            android:textColorHint="@color/colorHint"
-            android:textSize="14sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="39dp"
-        android:layout_marginTop="1.5px"
-        android:background="@color/colorWhite"
-
-        android:orientation="horizontal"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="宽"
-            android:textColor="@color/colorText"
-            android:textSize="15sp"/>
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="24dp"
-            android:background="@color/colorWhite"
-            android:hint="单位：cm"
-            android:textColor="@color/colorText"
-            android:textColorHint="@color/colorHint"
-            android:textSize="14sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="39dp"
-        android:layout_marginTop="1.5px"
-        android:background="@color/colorWhite"
-
-        android:orientation="horizontal"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="高"
-            android:textColor="@color/colorText"
-            android:textSize="15sp"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="24dp"
-            android:background="@color/colorWhite"
-            android:gravity="center_vertical"
-            android:hint="单位：cm"
-            android:textColor="@color/colorText"
-            android:textColorHint="@color/colorHint"
-            android:textSize="14sp"/>
-    </LinearLayout>
+    <include layout="@layout/layout_common_volume"></include>
 
 
     <LinearLayout
@@ -131,12 +31,14 @@
             android:textColor="@color/colorText"
             android:textSize="15sp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <EditText
+            android:id="@+id/countingbase"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:inputType="numberDecimal"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="24dp"
-            android:text="324"
             android:textColor="@color/colorText"
             android:textSize="14sp"/>
     </LinearLayout>
@@ -153,16 +55,15 @@
         android:paddingTop="25dp">
 
         <TextView
+            android:id="@+id/result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
-            android:text="抛重：2.5kg"
             android:textColor="@color/colorText"
             android:textSize="20sp"/>
 
         <TextView
-            android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -181,7 +82,7 @@
         android:paddingRight="45dp">
 
         <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_search"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_alignParentBottom="true"

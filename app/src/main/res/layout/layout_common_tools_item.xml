@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="产品售价"
-            android:textColor="@color/colorText"
+            android:textColor="@color/colorTextHeader"
             android:textSize="15sp"/>
 
         <TextView
@@ -29,7 +29,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="外币"
-            android:textColor="@color/colorText"
+            android:textColor="@color/colorTextHeader"
             android:textSize="15sp"/>
 
         <TextView
@@ -39,7 +39,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="本币"
-            android:textColor="@color/colorText"
+            android:textColor="@color/colorTextHeader"
             android:textSize="15sp"/>
 
         <TextView
@@ -49,7 +49,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="比例"
-            android:textColor="@color/colorText"
+            android:textColor="@color/colorTextHeader"
             android:textSize="15sp"/>
 
     </LinearLayout>

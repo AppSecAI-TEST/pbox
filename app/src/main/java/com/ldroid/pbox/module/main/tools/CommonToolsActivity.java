@@ -217,7 +217,7 @@ public class CommonToolsActivity extends BaseActivity implements ToolsContract.V
             holder.setText(R.id.tv_china, item.value2);
             holder.setText(R.id.tv_ratio, item.value3);
 
-            int color = getResources().getColor(R.color.colorHint);
+            int color = getResources().getColor(R.color.colorText);
             holder.setTextColor(R.id.tv_foreign, color);
             holder.setTextColor(R.id.tv_china, color);
             holder.setTextColor(R.id.tv_ratio, color);

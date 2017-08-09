@@ -53,7 +53,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:text="产品名称"
-                        android:textColor="@color/colorText"
+                        android:textColor="@color/colorTextHeader"
                         android:textSize="15sp"/>
 
                     <EditText
@@ -82,7 +82,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:text="国内运费"
-                        android:textColor="@color/colorText"
+                        android:textColor="@color/colorTextHeader"
                         android:textSize="15sp"/>
 
                     <EditText
@@ -93,7 +93,8 @@
                         android:layout_marginLeft="14dp"
                         android:background="@color/colorWhite"
                         android:hint="单位:元"
-                        android:textColor="@color/colorHint"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/colorText"
                         android:textColorHint="@color/colorHint"
                         android:textSize="14sp"/>
                 </LinearLayout>
@@ -121,7 +122,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:text="国        家"
-                        android:textColor="@color/colorText"
+                        android:textColor="@color/colorTextHeader"
                         android:textSize="15sp"/>
 
                     <EditText
@@ -133,7 +134,7 @@
                         android:background="@color/colorWhite"
                         android:gravity="center_vertical"
                         android:hint="国家"
-                        android:textColor="@color/colorHint"
+                        android:textColor="@color/colorText"
                         android:textColorHint="@color/colorHint"
                         android:textSize="14sp"/>
 
@@ -151,7 +152,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:text="国外运费"
-                        android:textColor="@color/colorText"
+                        android:textColor="@color/colorTextHeader"
                         android:textSize="15sp"/>
 
                     <EditText
@@ -162,7 +163,8 @@
                         android:layout_marginLeft="14dp"
                         android:background="@color/colorWhite"
                         android:hint="单位:元"
-                        android:textColor="@color/colorHint"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/colorText"
                         android:textColorHint="@color/colorHint"
                         android:textSize="14sp"/>
                 </LinearLayout>
@@ -189,7 +191,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:text="利  润  率"
-                        android:textColor="@color/colorText"
+                        android:textColor="@color/colorTextHeader"
                         android:textSize="15sp"/>
 
                     <EditText
@@ -200,7 +202,8 @@
                         android:layout_marginLeft="14dp"
                         android:background="@color/colorWhite"
                         android:hint="00.00%"
-                        android:textColor="@color/colorHint"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/colorText"
                         android:textColorHint="@color/colorHint"
                         android:textSize="14sp"/>
 
@@ -218,7 +221,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:text="杂        费"
-                        android:textColor="@color/colorText"
+                        android:textColor="@color/colorTextHeader"
                         android:textSize="15sp"/>
 
                     <EditText
@@ -227,8 +230,9 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="14dp"
+                        android:inputType="numberDecimal"
                         android:background="@color/colorWhite"
-                        android:textColor="@color/colorHint"
+                        android:textColor="@color/colorText"
                         android:textColorHint="@color/colorHint"
                         android:textSize="14sp"/>
                 </LinearLayout>
@@ -254,7 +258,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:text="采购单价"
-                        android:textColor="@color/colorText"
+                        android:textColor="@color/colorTextHeader"
                         android:textSize="15sp"/>
 
                     <EditText
@@ -263,8 +267,9 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="14dp"
+                        android:inputType="numberDecimal"
                         android:background="@color/colorWhite"
-                        android:textColor="@color/colorHint"
+                        android:textColor="@color/colorText"
                         android:textColorHint="@color/colorHint"
                         android:textSize="14sp"/>
 
@@ -282,7 +287,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:text="平台费率"
-                        android:textColor="@color/colorText"
+                        android:textColor="@color/colorTextHeader"
                         android:textSize="15sp"/>
 
                     <EditText
@@ -293,7 +298,8 @@
                         android:layout_marginLeft="14dp"
                         android:background="@color/colorWhite"
                         android:hint="00.00%"
-                        android:textColor="@color/colorHint"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/colorText"
                         android:textSize="14sp"/>
                 </LinearLayout>
             </LinearLayout>
@@ -318,7 +324,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:text="采购数量"
-                        android:textColor="@color/colorText"
+                        android:textColor="@color/colorTextHeader"
                         android:textSize="15sp"/>
 
                     <EditText
@@ -327,8 +333,9 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="14dp"
+                        android:inputType="numberDecimal"
                         android:background="@color/colorWhite"
-                        android:textColor="@color/colorHint"
+                        android:textColor="@color/colorText"
                         android:textColorHighlight="@color/colorHint"
                         android:textSize="14sp"/>
 
@@ -346,7 +353,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:text="外币汇率"
-                        android:textColor="@color/colorText"
+                        android:textColor="@color/colorTextHeader"
                         android:textSize="15sp"/>
 
                     <EditText
@@ -355,8 +362,9 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="14dp"
+                        android:inputType="numberDecimal"
                         android:background="@color/colorWhite"
-                        android:textColor="@color/colorHint"
+                        android:textColor="@color/colorText"
                         android:textColorHint="@color/colorHint"
                         android:textSize="14sp"/>
                 </LinearLayout>

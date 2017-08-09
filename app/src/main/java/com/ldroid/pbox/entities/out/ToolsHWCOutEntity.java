@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class ToolsHWCOutEntity {
 
 
-    @Expose public String Type ;
+    @Expose public String Type ; // 类型(1:单品; 2:批量)
     @Expose public String SellingPrice1 ;
     @Expose public String SellingPrice2 ;
     @Expose public String SellingPrice3 ;

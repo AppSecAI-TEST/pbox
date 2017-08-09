@@ -1,6 +1,9 @@
 package com.ldroid.pbox.entities.out;
 
 import com.google.gson.annotations.Expose;
+import com.ldroid.pbox.module.main.tools.ToolsResultEntity;
+
+import java.util.ArrayList;
 
 /**
  * Created by xianglong.liang on 2017/7/31.
@@ -22,9 +25,26 @@ public class ToolsCBLROutEntity {
     @Expose public String Incidentals1 ;
     @Expose public String Incidentals2 ;
     @Expose public String Incidentals3 ;
+    @Expose public String ForeignFreight1 ;
+    @Expose public String ForeignFreight2 ;
+    @Expose public String ForeignFreight3 ;
     @Expose public String Commission1 ;
     @Expose public String Commission2 ;
     @Expose public String Commission3 ;
+
+    public ArrayList<ToolsResultEntity> generateList() {
+        ArrayList<ToolsResultEntity> result = new ArrayList<>();
+        result.add(new ToolsResultEntity("利润率", ProfitMargin, null, null));
+        result.add(new ToolsResultEntity("产品售价", SellingPrice1, SellingPrice2, SellingPrice3));
+        result.add(new ToolsResultEntity("产品利润", Profit1, Profit2, Profit3));
+        result.add(new ToolsResultEntity("采购成本", Cost1, Cost2, Cost3));
+        result.add(new ToolsResultEntity("国外运费", ForeignFreight1, ForeignFreight2, ForeignFreight3));
+        result.add(new ToolsResultEntity("其他杂费", Incidentals1, Incidentals2, Incidentals3));
+        result.add(new ToolsResultEntity("平台佣金", Commission1, Commission2, Commission3));
+
+
+        return result;
+    }
 
     /**
      ProfitMargin	利润率

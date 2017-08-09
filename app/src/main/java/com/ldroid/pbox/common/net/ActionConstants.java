@@ -26,7 +26,7 @@ public interface ActionConstants {
     /**
      * E邮宝
      */
-    String TOOLS_EYB = "/API/ReviewPrice/EYB";
+    String TOOLS_EYB = "API/ReviewPrice/EYB";
     /**
      * 挂号小包
      */

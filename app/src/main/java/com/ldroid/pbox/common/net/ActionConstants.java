@@ -50,7 +50,7 @@ public interface ActionConstants {
     /**
      * 成本利润
      */
-    String TOOLS_DBLL = "API/Auxiliary/CBLL";
+    String TOOLS_CBLR = "API/Auxiliary/CBLL";
     /**
      * 抛重换算
      */

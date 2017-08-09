@@ -22,12 +22,28 @@
         android:paddingTop="30dp">
 
         <TextView
+            android:id="@+id/tv_eub"
+            android:layout_width="fill_parent"
+            android:layout_height="55dp"
+            android:background="@color/colorWhite"
+            android:gravity="center"
+            android:tag="2"
+            android:text="E邮宝"
+            android:textColor="@color/colorText"
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1.5px"
+            android:background="@color/colorSeparator"/>
+
+        <TextView
             android:id="@+id/tv_small"
             android:layout_width="fill_parent"
             android:layout_height="55dp"
             android:background="@color/colorWhite"
             android:gravity="center"
-            android:tag="small"
+            android:tag="3"
             android:text="挂号小包"
             android:textColor="@color/colorText"
             android:textSize="16sp"/>
@@ -43,8 +59,8 @@
             android:layout_height="55dp"
             android:background="@color/colorWhite"
             android:gravity="center"
+            android:tag="4"
             android:text="挂号大包"
-            android:tag="big"
             android:textColor="@color/colorText"
             android:textSize="16sp"/>
 
@@ -60,8 +76,8 @@
             android:layout_height="55dp"
             android:background="@color/colorWhite"
             android:gravity="center"
+            android:tag="5"
             android:text="EMS"
-            android:tag="EMS"
             android:textColor="@color/colorText"
             android:textSize="16sp"/>
     </LinearLayout>

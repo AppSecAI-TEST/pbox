@@ -22,6 +22,7 @@ public class FeeToolsPopupWindow extends BasePopupWindow implements View.OnClick
         getContentView().findViewById(R.id.tv_small).setOnClickListener(this);
         getContentView().findViewById(R.id.tv_big).setOnClickListener(this);
         getContentView().findViewById(R.id.tv_ems).setOnClickListener(this);
+        getContentView().findViewById(R.id.tv_eub).setOnClickListener(this);
 
 
     }

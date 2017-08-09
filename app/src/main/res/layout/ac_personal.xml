@@ -84,7 +84,7 @@
             android:drawablePadding="10dp"
             android:drawableRight="@drawable/icon_common_arrow_right"
             android:text="哈尼"
-            android:textColor="@color/colorText"
+            android:textColor="@color/colorHint"
             android:textSize="16sp"/>
 
     </RelativeLayout>
@@ -114,6 +114,7 @@
             android:textSize="16sp"/>
 
         <TextView
+            android:id="@+id/tv_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -121,7 +122,7 @@
             android:drawablePadding="10dp"
             android:drawableRight="@drawable/icon_common_arrow_right"
             android:text="138****2222"
-            android:textColor="@color/colorText"
+            android:textColor="@color/colorHint"
             android:textSize="16sp"/>
 
     </RelativeLayout>
@@ -147,17 +148,21 @@
             android:layout_centerVertical="true"
             android:text="ID"
             android:textColor="@color/colorText"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:id="@+id/textView8"/>
 
         <TextView
+            android:id="@+id/tv_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
             android:drawablePadding="10dp"
             android:text="758565256"
-            android:textColor="@color/colorText"
-            android:textSize="16sp"/>
+            android:textColor="@color/colorHint"
+            android:textSize="16sp"
+            android:layout_alignBaseline="@+id/textView8"
+            android:layout_alignBottom="@+id/textView8"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
 
     </RelativeLayout>
 </LinearLayout>

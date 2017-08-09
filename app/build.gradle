@@ -51,4 +51,6 @@ dependencies {
     compile 'com.crazysunj:cardslideview:1.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    compile 'org.greenrobot:eventbus:3.0.0'
+
 }

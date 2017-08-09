@@ -148,6 +148,7 @@ public class ModifyPhoneActivity extends BaseActivity implements UserContract.Vi
         user.Phone = phone;
         ConfigDao.getInstance().setUser(user);
 
+        post(new PhoneEvent(phone));
         ToastUtils.showLongToast(mContext, "手机号码修改成功");
         finish();
     }
@@ -164,5 +165,13 @@ public class ModifyPhoneActivity extends BaseActivity implements UserContract.Vi
             mCountDownTimer.cancel();
         }
         super.onDestroy();
+    }
+
+    public class PhoneEvent {
+        public String phone;
+
+        public PhoneEvent(String phone) {
+            this.phone = phone;
+        }
     }
 }

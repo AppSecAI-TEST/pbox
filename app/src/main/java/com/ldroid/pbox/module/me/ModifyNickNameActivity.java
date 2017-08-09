@@ -101,6 +101,7 @@ public class ModifyNickNameActivity extends BaseActivity implements UserContract
         user.NickName = nickname;
         ConfigDao.getInstance().setUser(user);
 
+        post(new NickNameEvent(nickname));
         ToastUtils.showLongToast(mContext, "昵称修改成功");
         finish();
 
@@ -114,5 +115,13 @@ public class ModifyNickNameActivity extends BaseActivity implements UserContract
     @Override
     public void onRespSmsCode(String phone) {
 
+    }
+
+    public class NickNameEvent {
+        public String nickname;
+
+        public NickNameEvent(String nickname) {
+            this.nickname = nickname;
+        }
     }
 }

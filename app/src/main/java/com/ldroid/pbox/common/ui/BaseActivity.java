@@ -24,6 +24,8 @@ import android.widget.TextView;
 import com.ldroid.pbox.R;
 import com.ldroid.pbox.common.ui.lib.SystemBarTintManager;
 
+import org.greenrobot.eventbus.EventBus;
+
 import butterknife.ButterKnife;
 
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener{
@@ -55,6 +57,9 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     public void startAnimActivity(Class<?> cla) {
         startActivity(new Intent(this, cla));
     }
+
+
+
 
 
     @SuppressLint("InlinedApi")
@@ -107,6 +112,26 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             winParams.flags &= ~bits;
         }
         win.setAttributes(winParams);
+    }
+
+
+
+    public void register(Object subscriber) {
+        if (!EventBus.getDefault().isRegistered(subscriber)) {
+            EventBus.getDefault().register(subscriber);
+        }
+    }
+
+    public void post(Object... event) {
+        for (Object e : event) {
+            EventBus.getDefault().post(e);
+        }
+    }
+
+    public void unregister(Object subscriber) {
+        if (EventBus.getDefault().isRegistered(subscriber)) {
+            EventBus.getDefault().unregister(subscriber);
+        }
     }
 
 

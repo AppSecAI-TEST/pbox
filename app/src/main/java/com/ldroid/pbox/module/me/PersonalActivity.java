@@ -9,6 +9,10 @@ import com.ldroid.pbox.common.ui.lib.pop.BottomMenuDialog;
 import com.ldroid.pbox.dao.ConfigDao;
 import com.ldroid.pbox.entities.out.UserOutEntity;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 
@@ -17,10 +21,25 @@ public class PersonalActivity extends BaseActivity {
 
     @BindView(R.id.tv_nickname)
     TextView mTvNickName;
+    @BindView(R.id.tv_phone)
+    TextView mTvPhone;
+    @BindView(R.id.tv_id)
+    TextView mTvId;
 
     @Override
     protected void initPreparation() {
+        register(this);
+    }
 
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onNickNameChanged(ModifyNickNameActivity.NickNameEvent event) {
+        mTvNickName.setText(event.nickname);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onPhoneChanged(ModifyPhoneActivity.PhoneEvent event) {
+        mTvPhone.setText(event.phone);
     }
 
     @Override
@@ -36,7 +55,11 @@ public class PersonalActivity extends BaseActivity {
         UserOutEntity user = ConfigDao.getInstance().getUser();
 
 
-        mTvNickName.setText(user.NickName);
+        if (user != null) {
+            mTvNickName.setText(user.NickName);
+            mTvPhone.setText(user.Phone.replaceAll("(\\d{3})\\d{6}(\\d{2})","$1******$2"));
+            mTvId.setText(user.UserCode);
+        }
     }
 
     @Override
@@ -76,5 +99,12 @@ public class PersonalActivity extends BaseActivity {
     @OnClick(R.id.rl_phone)
     public void onClickPhone() {
         startAnimActivity(ModifyPhoneActivity.class);
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregister(this);
     }
 }

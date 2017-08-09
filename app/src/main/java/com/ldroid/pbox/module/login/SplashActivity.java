@@ -59,6 +59,7 @@ public class SplashActivity extends BaseActivity {
                 } else {
                     startAnimActivity(LoginActivity.class);
                 }
+                finish();
             }
 
         });

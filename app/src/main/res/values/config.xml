@@ -3,7 +3,7 @@
 
     <bool name="env_release">false</bool>
 
-    <string name="url_release">https://www.ipricebox.com/</string>
-    <string name="url_debug">https://www.ipricebox.com/</string>
+    <string name="url_release"></string>
+    <string name="url_debug"></string>
 
 </resources>

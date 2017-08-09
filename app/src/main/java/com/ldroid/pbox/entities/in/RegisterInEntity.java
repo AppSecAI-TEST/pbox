@@ -34,7 +34,7 @@ public class RegisterInEntity extends InputEntity {
         params.put("nickname", nickname);
         params.put("phone", phone);
         params.put("code", code);
-        params.put("password", DigestUtils.md5(password));
+        params.put("password", password);
         return params;
     }
 

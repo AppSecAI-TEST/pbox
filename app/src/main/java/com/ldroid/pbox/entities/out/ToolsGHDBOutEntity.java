@@ -1,6 +1,9 @@
 package com.ldroid.pbox.entities.out;
 
 import com.google.gson.annotations.Expose;
+import com.ldroid.pbox.module.main.tools.ToolsResultEntity;
+
+import java.util.ArrayList;
 
 /**
  * Created by xianglong.liang on 2017/7/31.
@@ -26,6 +29,21 @@ public class ToolsGHDBOutEntity {
     @Expose public String Commission1 ;
     @Expose public String Commission2 ;
     @Expose public String Commission3 ;
+
+
+    public ArrayList<ToolsResultEntity> generateList() {
+        ArrayList<ToolsResultEntity> result = new ArrayList<>();
+        result.add(new ToolsResultEntity("产品售价", SellingPrice1, SellingPrice2, SellingPrice3));
+        result.add(new ToolsResultEntity("产品利润", Profit1, Profit2, Profit3));
+        result.add(new ToolsResultEntity("采购成本", Cost1, Cost2, Cost3));
+        result.add(new ToolsResultEntity("大包运费", HomeFreight1, HomeFreight2, HomeFreight3));
+        result.add(new ToolsResultEntity("其他杂费", Incidentals1, Incidentals2, Incidentals3));
+        result.add(new ToolsResultEntity("平台佣金", Commission1, Commission2, Commission3));
+
+
+        return result;
+    }
+
 
     /**
      SellingPrice1	产品售价(外币)

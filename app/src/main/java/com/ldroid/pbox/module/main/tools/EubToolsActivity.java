@@ -99,7 +99,7 @@ public class EubToolsActivity extends BaseActivity implements  ToolsContract.Vie
     @OnClick(R.id.countryname)
     public void onClickCountry() {
         startAnimActivity(new Intent(mContext, CountryListActivity.class)
-                .putExtra(EXTRA_COUNTRY_TYPE, ToolsContract.CountryType.EMS));
+                .putExtra(EXTRA_COUNTRY_TYPE, ToolsContract.CountryType.EYB));
     }
 
 
@@ -237,4 +237,9 @@ public class EubToolsActivity extends BaseActivity implements  ToolsContract.Vie
     }
 
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregister(this);
+    }
 }

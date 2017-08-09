@@ -1,6 +1,9 @@
 package com.ldroid.pbox.entities.out;
 
 import com.google.gson.annotations.Expose;
+import com.ldroid.pbox.module.main.tools.ToolsResultEntity;
+
+import java.util.ArrayList;
 
 /**
  * Created by xianglong.liang on 2017/7/31.
@@ -33,6 +36,25 @@ public class ToolsHWCOutEntity {
     @Expose public String Commission1 ;
     @Expose public String Commission2 ;
     @Expose public String Commission3 ;
+    @Expose public String CapitalCost1 ;
+    @Expose public String CapitalCost2 ;
+    @Expose public String CapitalCost3 ;
+
+    public ArrayList<ToolsResultEntity> generateList() {
+        ArrayList<ToolsResultEntity> result = new ArrayList<>();
+        result.add(new ToolsResultEntity("产品售价", SellingPrice1, SellingPrice2, SellingPrice3));
+        result.add(new ToolsResultEntity("产品利润", Profit1, Profit2, Profit3));
+        result.add(new ToolsResultEntity("采购成本", Cost1, Cost2, Cost3));
+        result.add(new ToolsResultEntity("国内运费", HomeFreight1, HomeFreight2, HomeFreight3));
+        result.add(new ToolsResultEntity("头程运费", FirstFreight1, FirstFreight2, FirstFreight3));
+        result.add(new ToolsResultEntity("后程运费", SecondFreight1, SecondFreight2, SecondFreight3));
+        result.add(new ToolsResultEntity("其他杂费", Incidentals1, Incidentals2, Incidentals3));
+        result.add(new ToolsResultEntity("平台佣金", Commission1, Commission1, Commission1));
+        result.add(new ToolsResultEntity("资金成本", CapitalCost2, CapitalCost2, CapitalCost3));
+
+
+        return result;
+    }
 
     /**
      Type	类型(1:单品; 2:批量)

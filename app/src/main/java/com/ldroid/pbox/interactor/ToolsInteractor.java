@@ -79,7 +79,7 @@ public class ToolsInteractor extends BaseInteractor {
 
     public void reqToolsHWC(ToolsHWCInEntity in,
                             ResponseListener<OutputDataEntity<ToolsHWCOutEntity>> listener) {
-        in.setMethod(ActionConstants.TOOLS_EMS);
+        in.setMethod(ActionConstants.TOOLS_HWC);
         performRequest(in, listener, new TypeToken<OutputDataEntity<ToolsHWCOutEntity>>() {
         }.getType(), TAG);
 

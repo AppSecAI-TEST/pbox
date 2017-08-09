@@ -153,6 +153,7 @@
                 android:layout_marginLeft="14dp"
                 android:background="@color/colorWhite"
                 android:hint="00.00%"
+                android:inputType="numberDecimal"
                 android:textColor="@color/colorText"
                 android:textColorHint="@color/colorHint"
                 android:textSize="14sp"/>

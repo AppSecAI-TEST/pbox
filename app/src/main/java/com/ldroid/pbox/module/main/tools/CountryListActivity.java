@@ -2,6 +2,7 @@ package com.ldroid.pbox.module.main.tools;
 
 import android.content.Context;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.ldroid.pbox.R;
@@ -29,7 +30,10 @@ import java.util.ArrayList;
 import butterknife.BindView;
 
 
-public class CountryListActivity extends BaseActivity implements ToolsContract.View {
+public class CountryListActivity extends BaseActivity implements ToolsContract.View, AdapterView.OnItemClickListener {
+
+
+    public static final String EXTRA_COUNTRY_TYPE = "extra_country_type";
 
 
     private ToosPresenter mPresenter;
@@ -38,9 +42,13 @@ public class CountryListActivity extends BaseActivity implements ToolsContract.V
     ListView mListView;
     private Adapter mAdapter;
 
+    private int mType;
+
     @Override
     protected void initPreparation() {
         mPresenter = new ToosPresenter(this);
+
+        mType = getIntent().getIntExtra(EXTRA_COUNTRY_TYPE, 0);
     }
 
     @Override
@@ -61,7 +69,7 @@ public class CountryListActivity extends BaseActivity implements ToolsContract.V
 
     @Override
     protected void initListener() {
-
+        mListView.setOnItemClickListener(this);
     }
 
 
@@ -69,7 +77,7 @@ public class CountryListActivity extends BaseActivity implements ToolsContract.V
     protected void initData() {
         UserOutEntity user = ConfigDao.getInstance().getUser();
         String userid = user != null ? user.UserID : null;
-        String type = "2";
+        String type = String.valueOf(mType);
         mPresenter.reqToolsCountrys(userid, type);
     }
 
@@ -153,6 +161,13 @@ public class CountryListActivity extends BaseActivity implements ToolsContract.V
 
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        ToolsCountrysOutEntity.CountrysEntity country = mAdapter.getItem(position);
+        post(new CountryEvent(country.CountryName));
+        finish();
+    }
+
     class Adapter extends CommonAdapter<ToolsCountrysOutEntity.CountrysEntity> {
 
         public Adapter() {
@@ -163,6 +178,14 @@ public class CountryListActivity extends BaseActivity implements ToolsContract.V
         public void convert(ViewHolder holder, ToolsCountrysOutEntity.CountrysEntity item) {
             holder.setText(R.id.tv_country, item.CountryName);
 
+        }
+    }
+
+    public class CountryEvent {
+        public String name;
+
+        public CountryEvent(String name) {
+            this.name = name;
         }
     }
 

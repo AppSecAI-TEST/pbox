@@ -48,4 +48,14 @@ public interface ToolsContract {
 
 
     }
+
+    /**
+     * 类型(2:E邮宝 3:小包 4:大包 5:EMS)
+     */
+     interface CountryType{
+        int EYB = 2;
+        int SMALL = 3;
+        int BIG = 4;
+        int EMS = 5;
+    }
 }

@@ -32,6 +32,12 @@ public class ToolsTYOutEntity {
     @Expose
     public String HomeFreight1;
     @Expose
+    public String ForeignFreight1;
+    @Expose
+    public String ForeignFreight2;
+    @Expose
+    public String ForeignFreight3;
+    @Expose
     public String HomeFreight2;
     @Expose
     public String HomeFreight3;
@@ -54,9 +60,9 @@ public class ToolsTYOutEntity {
         result.add(new ToolsResultEntity("产品售价", SellingPrice1, SellingPrice2, SellingPrice3));
         result.add(new ToolsResultEntity("产品利润", Profit1, Profit2, Profit3));
         result.add(new ToolsResultEntity("采购成本", Cost1, Cost2, Cost3));
-        result.add(new ToolsResultEntity("国内运费", HomeFreight1, HomeFreight3, HomeFreight3));
-        result.add(new ToolsResultEntity("国外运费", SellingPrice1, SellingPrice2, SellingPrice3));
-        result.add(new ToolsResultEntity("杂        费", Incidentals3, Incidentals3, Incidentals3));
+        result.add(new ToolsResultEntity("国内运费", HomeFreight1, HomeFreight2, HomeFreight3));
+        result.add(new ToolsResultEntity("国外运费", ForeignFreight1, ForeignFreight2, ForeignFreight3));
+        result.add(new ToolsResultEntity("杂        费", Incidentals1, Incidentals2, Incidentals3));
         result.add(new ToolsResultEntity("平台佣金", Commission1, Commission2, Commission3));
 
 

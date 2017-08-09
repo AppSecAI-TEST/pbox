@@ -1,6 +1,8 @@
 package com.ldroid.pbox.module.main.fragment;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,9 @@ import com.ldroid.pbox.R;
 import com.ldroid.pbox.common.ui.BaseFragment;
 import com.ldroid.pbox.common.ui.adapter.CommonAdapter;
 import com.ldroid.pbox.common.ui.adapter.ViewHolder;
+import com.ldroid.pbox.common.util.ToastUtils;
+import com.ldroid.pbox.dao.ConfigDao;
+import com.ldroid.pbox.module.login.LoginActivity;
 import com.ldroid.pbox.module.me.PersonalActivity;
 import com.ldroid.pbox.widget.SubscribeDialog;
 
@@ -33,7 +38,7 @@ public class MeFragment extends BaseFragment implements AdapterView.OnItemClickL
     @BindView(R.id.list_view)
     ListView mListView;
     private Adapter mAdapter;
-    private SubscribeDialog mSubDialog ;
+    private SubscribeDialog mSubDialog;
 
     @Override
     protected View getContentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -52,7 +57,7 @@ public class MeFragment extends BaseFragment implements AdapterView.OnItemClickL
         mAdapter = new Adapter();
         mListView.setAdapter(mAdapter);
 
-        mSubDialog = new SubscribeDialog(getActivity()) ;
+        mSubDialog = new SubscribeDialog(getActivity());
     }
 
     @Override
@@ -89,9 +94,30 @@ public class MeFragment extends BaseFragment implements AdapterView.OnItemClickL
             case FEEDBACK:
                 break;
             case LOGOUT:
+                confirmLogout() ;
                 break;
         }
     }
+
+
+    private void confirmLogout() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage("确认退出?");
+        builder.setNegativeButton("退出", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ConfigDao.getInstance().setUser(null);
+                ToastUtils.showLongToast(getActivity(), "退出登录成功");
+                startAnimActivity(LoginActivity.class);
+                getActivity().finish();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.setCanceledOnTouchOutside(true);
+        dialog.show();
+    }
+
 
     class Adapter extends CommonAdapter<ModuleEntity> {
 

@@ -3,6 +3,7 @@ package com.ldroid.pbox.dao;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.text.TextUtils;
 
 import com.ldroid.pbox.MainApp;
 import com.ldroid.pbox.common.util.JsonUtils;
@@ -36,11 +37,18 @@ public class ConfigDao {
     // //////////////////////////////////////////////////////////////////////////////////////////
 
     public void setUser(UserOutEntity user) {
-        mEditor.putString("user_info", JsonUtils.toJson(user)).commit();
+        if (user != null) {
+            mEditor.putString("user_info", JsonUtils.toJson(user)).commit();
+        } else {
+            mEditor.putString("user_info", "").commit();
+        }
     }
 
     public UserOutEntity getUser() {
         String user = mSharePref.getString("user_info", "");
+        if (TextUtils.isEmpty(user)) {
+            return null;
+        }
         return JsonUtils.fromJson(user, UserOutEntity.class);
     }
 

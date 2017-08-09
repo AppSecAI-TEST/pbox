@@ -26,7 +26,7 @@ public class LoginInEntity extends InputEntity {
     public Map<String, String> getParams() {
         Map<String, String> params = super.getParams();
         params.put("phone", phone);
-        params.put("password", DigestUtils.md5(password));
+        params.put("password", password);
         return params;
     }
 

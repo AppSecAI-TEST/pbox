@@ -2,6 +2,7 @@ package com.ldroid.pbox.module.main.tools;
 
 import android.content.Context;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -40,8 +41,26 @@ public class CommonToolsActivity extends BaseActivity implements ToolsContract.V
     ListView mListView;
     private Adapter mAdapter;
 
-    @BindView(R.id.tv_country)
-    TextView mTvCountry;
+    @BindView(R.id.product_name)
+    EditText productname;
+    @BindView(R.id.et_country)
+    EditText countryname;
+    @BindView(R.id.grossfreight1)
+    EditText grossfreight1;
+    @BindView(R.id.grossfreight2)
+    EditText grossfreight2;
+    @BindView(R.id.profitmargin)
+    EditText profitmargin;
+    @BindView(R.id.incidentals)
+    EditText incidentals;
+    @BindView(R.id.price)
+    EditText price;
+    @BindView(R.id.exchangerate1)
+    EditText exchangerate1;
+    @BindView(R.id.amount)
+    EditText amount;
+    @BindView(R.id.exchangerate2)
+    EditText exchangerate2;
 
     @Override
     protected void initPreparation() {
@@ -65,17 +84,6 @@ public class CommonToolsActivity extends BaseActivity implements ToolsContract.V
         mAdapter = new Adapter();
         mListView.setAdapter(mAdapter);
 
-        // test
-        ArrayList data = new ArrayList();
-        data.add(new ToolsResultEntity("产品售价", "453", "453", "100.00%"));
-        data.add(new ToolsResultEntity("产品利润", "222", "453", "100.00%"));
-        data.add(new ToolsResultEntity("采购成本", "555", "223", "16.00%"));
-        data.add(new ToolsResultEntity("国内运费", "244", "453", "100.00%"));
-        data.add(new ToolsResultEntity("国外运费", "445", "223", "15.00%"));
-        data.add(new ToolsResultEntity("杂        费", "223", "445", "22.00%"));
-        data.add(new ToolsResultEntity("平台佣金", "1256", "1256", "15.00%"));
-
-        mAdapter.setListData(data);
     }
 
     @Override
@@ -94,24 +102,19 @@ public class CommonToolsActivity extends BaseActivity implements ToolsContract.V
     }
 
 
-    @OnClick(R.id.tv_country)
-    public void onClickCountry() {
-        startAnimActivity(CountryListActivity.class);
-    }
-
     private void reqToolsTY() {
         UserOutEntity user = ConfigDao.getInstance().getUser();
         String userid = user != null ? user.UserID : null;
-        String productname = null;
-        String countryname = null;
-        String profitmargin = null;
-        String price = null;
-        String amount = null;
-        String grossfreight1 = null;
-        String grossfreight2 = null;
-        String incidentals = null;
-        String exchangerate1 = null;
-        String exchangerate2 = null;
+        String productname = this.productname.getText().toString();
+        String countryname = this.countryname.getText().toString();
+        String profitmargin = this.profitmargin.getText().toString();
+        String price = this.price.getText().toString();
+        String amount = this.amount.getText().toString();
+        String grossfreight1 = this.grossfreight1.getText().toString();
+        String grossfreight2 = this.grossfreight2.getText().toString();
+        String incidentals = this.incidentals.getText().toString();
+        String exchangerate1 = this.exchangerate1.getText().toString();
+        String exchangerate2 = this.exchangerate2.getText().toString();
         mPresenter.reqToolsTY(userid, productname, countryname,
                 profitmargin, price, amount, grossfreight1, grossfreight2, incidentals, exchangerate1, exchangerate2);
     }
@@ -143,7 +146,7 @@ public class CommonToolsActivity extends BaseActivity implements ToolsContract.V
 
     @Override
     public void onRespToolsTY(ToolsTYOutEntity data) {
-
+        mAdapter.setListData(data.generateList());
     }
 
     @Override

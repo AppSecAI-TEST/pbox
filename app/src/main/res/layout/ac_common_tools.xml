@@ -57,11 +57,11 @@
                         android:textSize="15sp"/>
 
                     <EditText
-                        android:id="@+id/editText2"
+                        android:id="@+id/product_name"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@color/colorWhite"
-                        android:hint="请输入"
+                        android:hint="产品名称"
                         android:paddingLeft="14dp"
                         android:paddingRight="14dp"
                         android:textColor="@color/colorText"
@@ -85,14 +85,16 @@
                         android:textColor="@color/colorText"
                         android:textSize="15sp"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <EditText
+                        android:id="@+id/grossfreight1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="14dp"
                         android:background="@color/colorWhite"
-                        android:text="单位:元"
+                        android:hint="单位:元"
                         android:textColor="@color/colorHint"
+                        android:textColorHint="@color/colorHint"
                         android:textSize="14sp"/>
                 </LinearLayout>
 
@@ -122,15 +124,17 @@
                         android:textColor="@color/colorText"
                         android:textSize="15sp"/>
 
-                    <TextView
-                        android:id="@+id/tv_country"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <EditText
+                        android:id="@+id/et_country"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="14dp"
                         android:background="@color/colorWhite"
-                        android:text="中国"
+                        android:gravity="center_vertical"
+                        android:hint="国家"
                         android:textColor="@color/colorHint"
+                        android:textColorHint="@color/colorHint"
                         android:textSize="14sp"/>
 
 
@@ -150,14 +154,16 @@
                         android:textColor="@color/colorText"
                         android:textSize="15sp"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <EditText
+                        android:id="@+id/grossfreight2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="14dp"
                         android:background="@color/colorWhite"
-                        android:text="单位:元"
+                        android:hint="单位:元"
                         android:textColor="@color/colorHint"
+                        android:textColorHint="@color/colorHint"
                         android:textSize="14sp"/>
                 </LinearLayout>
             </LinearLayout>
@@ -186,14 +192,16 @@
                         android:textColor="@color/colorText"
                         android:textSize="15sp"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <EditText
+                        android:id="@+id/profitmargin"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="14dp"
                         android:background="@color/colorWhite"
-                        android:text="50.00%"
+                        android:hint="00.00%"
                         android:textColor="@color/colorHint"
+                        android:textColorHint="@color/colorHint"
                         android:textSize="14sp"/>
 
 
@@ -213,14 +221,15 @@
                         android:textColor="@color/colorText"
                         android:textSize="15sp"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <EditText
+                        android:id="@+id/incidentals"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="14dp"
                         android:background="@color/colorWhite"
-                        android:text="86"
                         android:textColor="@color/colorHint"
+                        android:textColorHint="@color/colorHint"
                         android:textSize="14sp"/>
                 </LinearLayout>
             </LinearLayout>
@@ -248,14 +257,15 @@
                         android:textColor="@color/colorText"
                         android:textSize="15sp"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <EditText
+                        android:id="@+id/price"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="14dp"
                         android:background="@color/colorWhite"
-                        android:text="10.00"
                         android:textColor="@color/colorHint"
+                        android:textColorHint="@color/colorHint"
                         android:textSize="14sp"/>
 
 
@@ -271,17 +281,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:text="平台汇率"
+                        android:text="平台费率"
                         android:textColor="@color/colorText"
                         android:textSize="15sp"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <EditText
+                        android:id="@+id/exchangerate1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="14dp"
                         android:background="@color/colorWhite"
-                        android:text="15.00%"
+                        android:hint="00.00%"
                         android:textColor="@color/colorHint"
                         android:textSize="14sp"/>
                 </LinearLayout>
@@ -310,14 +321,15 @@
                         android:textColor="@color/colorText"
                         android:textSize="15sp"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <EditText
+                        android:id="@+id/amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="14dp"
                         android:background="@color/colorWhite"
-                        android:text="10"
                         android:textColor="@color/colorHint"
+                        android:textColorHighlight="@color/colorHint"
                         android:textSize="14sp"/>
 
 
@@ -337,14 +349,15 @@
                         android:textColor="@color/colorText"
                         android:textSize="15sp"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <EditText
+                        android:id="@+id/exchangerate2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="14dp"
                         android:background="@color/colorWhite"
-                        android:text="6.80"
                         android:textColor="@color/colorHint"
+                        android:textColorHint="@color/colorHint"
                         android:textSize="14sp"/>
                 </LinearLayout>
             </LinearLayout>
@@ -353,11 +366,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
+                android:layout_marginBottom="1.5px"
                 android:layout_marginTop="5dp"
                 android:background="@color/colorWhite"
                 android:gravity="center"
                 android:text="计算结果"
-                android:layout_marginBottom="1.5px"
                 android:textColor="@color/colorHint"
                 android:textSize="14sp"/>
 

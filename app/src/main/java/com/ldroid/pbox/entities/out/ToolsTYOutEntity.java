@@ -1,6 +1,9 @@
 package com.ldroid.pbox.entities.out;
 
 import com.google.gson.annotations.Expose;
+import com.ldroid.pbox.module.main.tools.ToolsResultEntity;
+
+import java.util.ArrayList;
 
 /**
  * Created by xianglong.liang on 2017/7/31.
@@ -8,24 +11,57 @@ import com.google.gson.annotations.Expose;
 public class ToolsTYOutEntity {
 
 
-    @Expose public String SellingPrice1 ;
-    @Expose public String SellingPrice2 ;
-    @Expose public String SellingPrice3 ;
-    @Expose public String Profit1 ;
-    @Expose public String Profit2 ;
-    @Expose public String Profit3 ;
-    @Expose public String Cost1 ;
-    @Expose public String Cost2 ;
-    @Expose public String Cost3 ;
-    @Expose public String HomeFreight1 ;
-    @Expose public String HomeFreight2 ;
-    @Expose public String HomeFreight3 ;
-    @Expose public String Incidentals1 ;
-    @Expose public String Incidentals2 ;
-    @Expose public String Incidentals3 ;
-    @Expose public String Commission1 ;
-    @Expose public String Commission2 ;
-    @Expose public String Commission3 ;
+    @Expose
+    public String SellingPrice1;
+    @Expose
+    public String SellingPrice2;
+    @Expose
+    public String SellingPrice3;
+    @Expose
+    public String Profit1;
+    @Expose
+    public String Profit2;
+    @Expose
+    public String Profit3;
+    @Expose
+    public String Cost1;
+    @Expose
+    public String Cost2;
+    @Expose
+    public String Cost3;
+    @Expose
+    public String HomeFreight1;
+    @Expose
+    public String HomeFreight2;
+    @Expose
+    public String HomeFreight3;
+    @Expose
+    public String Incidentals1;
+    @Expose
+    public String Incidentals2;
+    @Expose
+    public String Incidentals3;
+    @Expose
+    public String Commission1;
+    @Expose
+    public String Commission2;
+    @Expose
+    public String Commission3;
+
+
+    public ArrayList<ToolsResultEntity> generateList() {
+        ArrayList<ToolsResultEntity> result = new ArrayList<>();
+        result.add(new ToolsResultEntity("产品售价", SellingPrice1, SellingPrice2, SellingPrice3));
+        result.add(new ToolsResultEntity("产品利润", Profit1, Profit2, Profit3));
+        result.add(new ToolsResultEntity("采购成本", Cost1, Cost2, Cost3));
+        result.add(new ToolsResultEntity("国内运费", HomeFreight1, HomeFreight3, HomeFreight3));
+        result.add(new ToolsResultEntity("国外运费", SellingPrice1, SellingPrice2, SellingPrice3));
+        result.add(new ToolsResultEntity("杂        费", Incidentals3, Incidentals3, Incidentals3));
+        result.add(new ToolsResultEntity("平台佣金", Commission1, Commission2, Commission3));
+
+
+        return result;
+    }
 
     /**
      SellingPrice1	产品售价(外币)

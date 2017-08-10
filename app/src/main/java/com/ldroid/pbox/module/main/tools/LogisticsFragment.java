@@ -193,7 +193,6 @@ public class LogisticsFragment extends BaseFragment implements ToolsContract.Vie
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         ToolsWLZZOutEntity.ExpressItem express = mAdapter.getItem(position) ;
-
     }
 
     class Adapter extends CommonAdapter<ToolsWLZZOutEntity.ExpressItem> {

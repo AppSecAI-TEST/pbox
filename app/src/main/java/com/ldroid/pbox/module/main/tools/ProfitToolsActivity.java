@@ -204,13 +204,13 @@ public class ProfitToolsActivity extends BaseActivity implements ToolsContract.V
         @Override
         public void convert(ViewHolder holder, ToolsResultEntity item) {
             holder.setText(R.id.tv_head_key, item.key);
-            holder.setText(R.id.tv_foreign, item.value1);
-            holder.setText(R.id.tv_china, item.value2);
-            holder.setText(R.id.tv_ratio, item.value3);
+            holder.setText(R.id.tv_foreign, item.getValue1());
+            holder.setText(R.id.tv_china, item.getValue2());
+            holder.setText(R.id.tv_ratio, item.getValue3());
 
 
-            holder.setVisible(R.id.tv_china, !TextUtils.isEmpty(item.value2));
-            holder.setVisible(R.id.tv_ratio, !TextUtils.isEmpty(item.value2));
+            holder.setVisible(R.id.tv_china, !TextUtils.isEmpty(item.getValue2()));
+            holder.setVisible(R.id.tv_ratio, !TextUtils.isEmpty(item.getValue3()));
 
             int color = getResources().getColor(R.color.colorText);
             holder.setTextColor(R.id.tv_foreign, color);

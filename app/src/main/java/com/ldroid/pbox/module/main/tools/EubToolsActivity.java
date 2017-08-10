@@ -225,9 +225,9 @@ public class EubToolsActivity extends BaseActivity implements  ToolsContract.Vie
         @Override
         public void convert(ViewHolder holder, ToolsResultEntity item) {
             holder.setText(R.id.tv_head_key, item.key);
-            holder.setText(R.id.tv_foreign, item.value1);
-            holder.setText(R.id.tv_china, item.value2);
-            holder.setText(R.id.tv_ratio, item.value3);
+            holder.setText(R.id.tv_foreign, item.getValue1());
+            holder.setText(R.id.tv_china, item.getValue2());
+            holder.setText(R.id.tv_ratio, item.getValue3());
 
             int color = getResources().getColor(R.color.colorText);
             holder.setTextColor(R.id.tv_foreign, color);

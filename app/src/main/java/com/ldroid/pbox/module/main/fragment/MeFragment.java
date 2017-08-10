@@ -109,6 +109,7 @@ public class MeFragment extends BaseFragment implements AdapterView.OnItemClickL
             case SHARE:
                 break;
             case CLEAN:
+                confirmClean() ;
                 break;
             case APPRAISE:
                 break;
@@ -120,6 +121,21 @@ public class MeFragment extends BaseFragment implements AdapterView.OnItemClickL
         }
     }
 
+
+    private void confirmClean() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage("确认清楚缓存?");
+        builder.setNegativeButton("清除", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ToastUtils.showLongToast(getActivity(), "缓存清除成功");
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.setCanceledOnTouchOutside(true);
+        dialog.show();
+    }
 
     private void confirmLogout() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());

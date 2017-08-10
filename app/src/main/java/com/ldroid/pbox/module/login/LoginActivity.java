@@ -60,6 +60,11 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
         finish();
     }
 
+    @OnClick(R.id.tv_forget)
+    public void onClickForget() {
+        startAnimActivity(ForgetPwdStep1Activity.class);
+    }
+
 
     @Override
     public Context getContext() {

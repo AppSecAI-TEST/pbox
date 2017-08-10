@@ -39,7 +39,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="1px"
+            android:layout_height="1.5px"
             android:background="@color/colorSeparator"/>
 
         <LinearLayout
@@ -82,7 +82,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="1px"
+            android:layout_height="1.5px"
             android:background="@color/colorSeparator"/>
 
         <EditText
@@ -101,12 +101,12 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="1px"
+            android:layout_height="1.5px"
             android:background="@color/colorSeparator"/>
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="1px"
+            android:layout_height="1.5px"
             android:background="@color/colorSeparator"/>
 
         <EditText
@@ -125,7 +125,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="1px"
+            android:layout_height="1.5px"
             android:background="@color/colorSeparator"/>
 
         <Button

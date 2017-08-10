@@ -22,10 +22,13 @@ import com.ldroid.pbox.common.ui.adapter.ViewHolder;
 import com.ldroid.pbox.common.util.ToastUtils;
 import com.ldroid.pbox.dao.ConfigDao;
 import com.ldroid.pbox.entities.out.UserOutEntity;
+import com.ldroid.pbox.entities.out.UserWidgetsOutEntity;
 import com.ldroid.pbox.module.login.LoginActivity;
 import com.ldroid.pbox.module.me.FeedbackActivity;
 import com.ldroid.pbox.module.me.ModifyNickNameActivity;
 import com.ldroid.pbox.module.me.PersonalActivity;
+import com.ldroid.pbox.module.me.UserContract;
+import com.ldroid.pbox.module.me.UserPresenter;
 import com.ldroid.pbox.widget.SubscribeDialog;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -35,7 +38,8 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 
-public class MeFragment extends BaseFragment implements AdapterView.OnItemClickListener {
+public class MeFragment extends BaseFragment implements AdapterView.OnItemClickListener,
+        UserContract.View{
 
     public static final int PERSONAL = 1;
     public static final int CHART = 2;
@@ -44,6 +48,8 @@ public class MeFragment extends BaseFragment implements AdapterView.OnItemClickL
     public static final int APPRAISE = 5;
     public static final int FEEDBACK = 6;
     public static final int LOGOUT = 7;
+
+    private UserPresenter mPresenter ;
 
 
     @BindView(R.id.list_view)
@@ -67,6 +73,7 @@ public class MeFragment extends BaseFragment implements AdapterView.OnItemClickL
 
     @Override
     protected void initPreparation() {
+        mPresenter = new UserPresenter(this);
         register(this);
     }
 
@@ -175,6 +182,41 @@ public class MeFragment extends BaseFragment implements AdapterView.OnItemClickL
         AlertDialog dialog = builder.create();
         dialog.setCanceledOnTouchOutside(true);
         dialog.show();
+    }
+
+    @Override
+    public void showLoading(String msg) {
+
+    }
+
+    @Override
+    public void dismissLoading() {
+
+    }
+
+    @Override
+    public void onError(String msg) {
+
+    }
+
+    @Override
+    public void onRespUserWidgets(UserWidgetsOutEntity data) {
+
+    }
+
+    @Override
+    public void onRespNickName() {
+
+    }
+
+    @Override
+    public void onRespPhone() {
+
+    }
+
+    @Override
+    public void onRespSmsCode(String phone) {
+
     }
 
 

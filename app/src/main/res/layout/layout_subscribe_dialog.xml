@@ -60,13 +60,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="¥12.00"
+                                android:visibility="gone"
                                 android:textColor="@color/colorHint"
                                 android:textSize="12sp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="免费"
+                                android:text="¥12.00"
                                 android:textColor="@color/colorApp"
                                 android:textSize="18sp"/>
 
@@ -80,7 +81,7 @@
                             android:background="@drawable/btn_app_radius_n"
                             android:text="一个月"
                             android:textColor="@color/colorWhite"
-                            android:textSize="14sp"/>
+                            android:textSize="13sp"/>
 
 
                     </LinearLayout>
@@ -109,7 +110,7 @@
                             android:background="@drawable/btn_app_radius_n"
                             android:text="三个月"
                             android:textColor="@color/colorWhite"
-                            android:textSize="14sp"/>
+                            android:textSize="13sp"/>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -146,7 +147,7 @@
                             android:background="@drawable/btn_app_radius_n"
                             android:text="半年"
                             android:textColor="@color/colorWhite"
-                            android:textSize="14sp"/>
+                            android:textSize="13sp"/>
 
 
                     </LinearLayout>
@@ -175,7 +176,7 @@
                             android:background="@drawable/btn_app_radius_n"
                             android:text="一年"
                             android:textColor="@color/colorWhite"
-                            android:textSize="14sp"/>
+                            android:textSize="13sp"/>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -204,7 +205,7 @@
                 android:layout_marginTop="69dp"
                 android:background="@drawable/bg_substribe_free"
                 android:gravity="center"
-                android:text="首月免费试用"
+                android:text="7天免费试用"
                 android:textColor="@color/colorText"
                 android:textSize="16sp"/>
         </FrameLayout>

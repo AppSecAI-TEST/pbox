@@ -23,7 +23,8 @@
             android:drawablePadding="10dp"
             android:drawableRight="@drawable/icon_common_edit_pen"
             android:gravity="center"
-            android:text="EMS"
+            android:tag="2"
+            android:text="E邮宝"
             android:textColor="@color/colorApp"
             android:textSize="16sp"/>
     </RelativeLayout>
@@ -47,14 +48,15 @@
             android:textColor="@color/colorTextHeader"
             android:textSize="15sp"/>
 
-        <EditText
+        <TextView
             android:id="@+id/countryname"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="24dp"
+            android:gravity="center_vertical"
             android:background="@color/colorWhite"
-            android:hint="请输入国家"
+            android:hint="国家"
             android:textColor="@color/colorText"
             android:textColorHint="@color/colorHint"
             android:textSize="14sp"/>
@@ -86,7 +88,7 @@
             android:layout_marginLeft="24dp"
             android:background="@color/colorWhite"
             android:gravity="center_vertical"
-            android:hint="单位:KG"
+            android:hint="单位：KG"
             android:inputType="numberDecimal"
             android:textColor="@color/colorText"
             android:textColorHint="@color/colorHint"
@@ -96,21 +98,19 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginTop="1.5px"
         android:background="@color/colorWhite"
         android:orientation="horizontal"
-        android:paddingBottom="20dp"
         android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="20dp">
+        android:paddingRight="16dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:text="运费折扣"
-            android:textColor="@color/colorText"
+            android:textColor="@color/colorTextHeader"
             android:textSize="15sp"/>
 
 
@@ -129,6 +129,7 @@
 
 
     <LinearLayout
+        android:id="@+id/ll_Calculation1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -145,7 +146,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
-            android:text="货物数量：20"
+            android:text="货物数量："
             android:textColor="@color/colorText"
             android:textSize="20sp"/>
 
@@ -163,11 +164,13 @@
 
 
     <LinearLayout
+        android:id="@+id/ll_Calculation2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
+        android:visibility="gone"
         android:background="@drawable/btn_white_radius_stroke"
         android:orientation="vertical"
         android:paddingBottom="25dp"

@@ -1,6 +1,8 @@
 package com.ldroid.pbox.module.main.tools;
 
 import android.content.Context;
+import android.content.Intent;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -24,8 +26,13 @@ import com.ldroid.pbox.entities.out.ToolsYFGSOutEntity;
 import com.ldroid.pbox.entities.out.UserOutEntity;
 import com.ldroid.pbox.widget.BasePopupWindow;
 
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import butterknife.BindView;
 import butterknife.OnClick;
+
+import static com.ldroid.pbox.module.main.tools.CountryListActivity.EXTRA_COUNTRY_TYPE;
 
 
 public class FeeToolsActivity extends BaseActivity implements ToolsContract.View{
@@ -42,17 +49,29 @@ public class FeeToolsActivity extends BaseActivity implements ToolsContract.View
     private ToosPresenter mPresenter;
 
 
-    @BindView(R.id.countryname) EditText countryname ;
+    @BindView(R.id.countryname) TextView countryname ;
     @BindView(R.id.weight) EditText weight ;
     @BindView(R.id.discount) EditText discount ;
 
     @BindView(R.id.Calculation1) TextView Calculation1 ;
     @BindView(R.id.Calculation2) TextView Calculation2 ;
 
+    @BindView(R.id.ll_Calculation1) View Cal1Layout ;
+    @BindView(R.id.ll_Calculation2) View Cal2Layout ;
+
+
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onCountryChanged(CountryListActivity.CountryEvent event) {
+        countryname.setText(event.name);
+    }
+
+
 
     @Override
     protected void initPreparation() {
         mPresenter = new ToosPresenter(this) ;
+        register(this);
     }
 
     @Override
@@ -75,6 +94,14 @@ public class FeeToolsActivity extends BaseActivity implements ToolsContract.View
             }
         });
     }
+
+
+    @OnClick(R.id.countryname)
+    public void onClickCountry() {
+        startAnimActivity(new Intent(mContext, CountryListActivity.class)
+                .putExtra(EXTRA_COUNTRY_TYPE,Integer.parseInt(channeltype.getTag().toString())));
+    }
+
 
 
     @OnClick(R.id.channeltype)
@@ -179,11 +206,25 @@ public class FeeToolsActivity extends BaseActivity implements ToolsContract.View
     public void onRespToolsYFGS(ToolsYFGSOutEntity data) {
         Calculation1.setText("运费：" + data.Calculation1 + "本币");
         Calculation2.setText("抛重：" + data.Calculation2 + "本币");
+
+        Cal1Layout.setVisibility(TextUtils.isEmpty(data.Calculation1) || Double.parseDouble
+                (data.Calculation1) == 0 ? View.GONE : View.VISIBLE);
+        Cal2Layout.setVisibility(TextUtils.isEmpty(data.Calculation2) || Double.parseDouble
+                (data.Calculation2) == 0 ? View.GONE :
+                View
+                .VISIBLE);
     }
 
     @Override
     public void onRespToolsWLZZ(ToolsWLZZOutEntity data) {
 
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregister(this);
     }
 
 }

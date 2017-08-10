@@ -46,7 +46,7 @@ public class MeFragment extends BaseFragment implements AdapterView.OnItemClickL
     }
 
     @Override
-    protected void initPresenter() {
+    protected void initPreparation() {
 
     }
 

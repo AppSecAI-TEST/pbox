@@ -55,8 +55,8 @@ public class LogisticsToolsActivity extends BaseActivity {
     }
 
     private void initTab() {
-        mTraceFragment = new LogisticsFragment();
-        mArchiveFragment = new LogisticsFragment();
+        mTraceFragment = LogisticsFragment.newInstance(0);
+        mArchiveFragment =LogisticsFragment.newInstance(1);
         mFragmentList = new Fragment[]{mTraceFragment, mArchiveFragment};
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.fragment_container, mTraceFragment).show(mTraceFragment).commit();

@@ -44,7 +44,7 @@ public class MainFragment extends BaseFragment {
     }
 
     @Override
-    protected void initPresenter() {
+    protected void initPreparation() {
 
     }
 

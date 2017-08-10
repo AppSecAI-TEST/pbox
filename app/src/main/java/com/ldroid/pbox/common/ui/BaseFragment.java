@@ -3,11 +3,13 @@
  */
 package com.ldroid.pbox.common.ui;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -21,6 +23,7 @@ import butterknife.ButterKnife;
 
 public abstract class BaseFragment extends Fragment implements OnClickListener {
 
+    private ProgressDialog mProgressDialog ;
 
     public BaseFragment() {
     }
@@ -28,7 +31,7 @@ public abstract class BaseFragment extends Fragment implements OnClickListener {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        initPresenter();
+        initPreparation();
         initUI();
         initListener();
         initData();
@@ -44,7 +47,7 @@ public abstract class BaseFragment extends Fragment implements OnClickListener {
 
     protected abstract View getContentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState);
 
-    protected abstract void initPresenter();
+    protected abstract void initPreparation();
 
     protected abstract void initUI();
 
@@ -64,6 +67,22 @@ public abstract class BaseFragment extends Fragment implements OnClickListener {
 
     public void startAnimActivity(Class<?> cla) {
         startActivity(new Intent(getActivity(), cla));
+    }
+
+
+    public void showProgressDialog(String msg){
+        if(mProgressDialog == null){
+            mProgressDialog = new ProgressDialog(getActivity());
+        }
+        msg = TextUtils.isEmpty(msg) ? "请稍等..." : msg ;
+        mProgressDialog.setMessage(msg);
+        mProgressDialog.show();
+    }
+
+    public void dismissPorgressDialog(){
+        if(mProgressDialog != null){
+            mProgressDialog.dismiss(); ;
+        }
     }
 
 

@@ -1,6 +1,7 @@
 package com.ldroid.pbox.module.main.tools;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.ldroid.pbox.R;
 import com.ldroid.pbox.common.ui.BaseFragment;
 import com.ldroid.pbox.common.ui.adapter.CommonAdapter;
 import com.ldroid.pbox.common.ui.adapter.ViewHolder;
+import com.ldroid.pbox.common.util.ListUtils;
 import com.ldroid.pbox.common.util.ToastUtils;
 import com.ldroid.pbox.dao.ConfigDao;
 import com.ldroid.pbox.entities.out.ToolsCBLROutEntity;
@@ -76,7 +78,7 @@ public class LogisticsFragment extends BaseFragment implements ToolsContract.Vie
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                    reqToolsWLZZ() ;
+                    reqToolsWLZZ();
                     return true;
                 }
                 return false;
@@ -96,7 +98,7 @@ public class LogisticsFragment extends BaseFragment implements ToolsContract.Vie
     }
 
 
-    private void reqToolsWLZZ(){
+    private void reqToolsWLZZ() {
         UserOutEntity user = ConfigDao.getInstance().getUser();
         String userid = user != null ? user.UserID : null;
         if (mType == 0) {
@@ -105,7 +107,6 @@ public class LogisticsFragment extends BaseFragment implements ToolsContract.Vie
             mPresenter.reqToolsWLZZ(userid, num);
         }
     }
-
 
 
     @Override
@@ -180,33 +181,55 @@ public class LogisticsFragment extends BaseFragment implements ToolsContract.Vie
 
     }
 
+
     @Override
     public void onRespToolsWLZZ(ToolsWLZZOutEntity data) {
 
+        mAdapter.setExpress(data.ExpressInfo);
+
     }
 
-    class Adapter extends CommonAdapter<LogisticsEntity> {
+    class Adapter extends CommonAdapter<ToolsWLZZOutEntity.ExpressItem> {
+
+        ToolsWLZZOutEntity.ExpressEntity express;
 
         public Adapter() {
             super(getActivity(), R.layout.layout_logistics_tools_item);
         }
 
-        @Override
-        public void convert(final ViewHolder holder, final LogisticsEntity item) {
-            holder.setOnClickListener(R.id.ll_logistic_item, new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    item.checked = !item.checked;
-                    holder.setVisible(R.id.ll_logistics_oper, item.checked);
-                    notifyDataSetChanged();
-                }
-            });
+
+        public void setExpress(ToolsWLZZOutEntity.ExpressEntity express){
+            this.express = express ;
+
+            mAdapter.setListData(express.data);
         }
 
+        @Override
+        public void convert(final ViewHolder holder, final ToolsWLZZOutEntity.ExpressItem item) {
+            int positon = holder.getPosition();
+            holder.setVisible(R.id.ll_logistic_item, positon == 0);
+            holder.setVisible(R.id.line_sep, positon == 0);
 
+            holder.setText(R.id.com, express.com);
+            holder.setText(R.id.nu, express.nu);
+            holder.setBackgroundRes(R.id.stat,getStatRes(express.state));
+
+            holder.setText(R.id.tv_context, item.context);
+            holder.setText(R.id.tv_time, item.time);
+        }
+
+        private int getStatRes(int state){
+            // 运输中
+            if(state == 0){
+                return R.drawable.icon_logistics_trans ;
+            }
+            // 派送中
+            if(state == 5){
+                return R.drawable.icon_logistics_delivery ;
+            }
+            return R.drawable.icon_logistics_trans ;
+        }
     }
 
-    class LogisticsEntity {
-        boolean checked;
-    }
 }
+

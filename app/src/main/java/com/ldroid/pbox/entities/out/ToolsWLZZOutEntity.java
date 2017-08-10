@@ -2,15 +2,30 @@ package com.ldroid.pbox.entities.out;
 
 import com.google.gson.annotations.Expose;
 
+import java.util.ArrayList;
+
 /**
  * Created by xianglong.liang on 2017/7/31.
  */
 public class ToolsWLZZOutEntity {
 
 
-    @Expose public String Calculation1 ;
-    @Expose public String Calculation2 ;
+    @Expose public ExpressEntity ExpressInfo ;
 
+
+    public class ExpressEntity{
+        @Expose public String com ;
+        @Expose public String nu ;
+        @Expose public int state ;
+        @Expose public ArrayList<ExpressItem> data ;
+    }
+
+    public class ExpressItem{
+        @Expose public String time ;
+        @Expose public String ftime ;
+        @Expose public String context ;
+
+    }
 
     /**
      * ExpressInfo": {

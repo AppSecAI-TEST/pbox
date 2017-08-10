@@ -5,8 +5,10 @@ package com.ldroid.pbox.common.ui;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -22,7 +24,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ldroid.pbox.R;
+import com.ldroid.pbox.common.callback.SimpleCallback;
 import com.ldroid.pbox.common.ui.lib.SystemBarTintManager;
+import com.ldroid.pbox.dao.ConfigDao;
+import com.ldroid.pbox.entities.out.UserOutEntity;
+import com.ldroid.pbox.module.login.LoginActivity;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -131,6 +137,30 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     public void unregister(Object subscriber) {
         if (EventBus.getDefault().isRegistered(subscriber)) {
             EventBus.getDefault().unregister(subscriber);
+        }
+    }
+
+
+    public void checkLogin(SimpleCallback callback) {
+        UserOutEntity user = ConfigDao.getInstance().getUser();
+        if (user == null) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("现在登录?");
+            builder.setNegativeButton("确定", new DialogInterface.OnClickListener() {
+
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    startAnimActivity(LoginActivity.class);
+                    finish();
+                }
+            });
+            AlertDialog dialog = builder.create();
+            dialog.setCanceledOnTouchOutside(true);
+            dialog.show();
+        } else {
+            if (callback != null) {
+                callback.onCallback(null);
+            }
         }
     }
 

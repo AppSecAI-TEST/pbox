@@ -36,8 +36,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     @Override
     protected void initUI() {
 
-        setTranslucentStatus(R.color.colorWhite, 0);
-
+        //setTranslucentStatus(R.color.colorWhite, 0);
 
     }
 
@@ -57,6 +56,8 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     @OnClick(R.id.tv_guest)
     public void onClickGuest() {
+        startAnimActivity(MainActivity.class);
+        finish();
     }
 
 

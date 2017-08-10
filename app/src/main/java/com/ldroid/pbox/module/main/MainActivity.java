@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 
 import com.ldroid.pbox.R;
+import com.ldroid.pbox.common.callback.SimpleCallback;
 import com.ldroid.pbox.common.ui.BaseActivity;
 import com.ldroid.pbox.common.util.ToastUtils;
 import com.ldroid.pbox.module.main.fragment.ChartFragment;
@@ -63,7 +64,21 @@ public class MainActivity extends BaseActivity implements MainContract.View {
                 .add(R.id.fragment_container, mMainFragment).show(mMainFragment).commit();
     }
 
-    public void setTab(int index) {
+    public void onClickNavigator(final int index) {
+        if(index == 1 || index == 2){
+            checkLogin(new SimpleCallback() {
+                @Override
+                public void onCallback(Object data) {
+                    setTab(index);
+                }
+            });
+        }else{
+            setTab(index);
+        }
+
+    }
+
+    private void setTab(int index){
         mIndex = index;
         if (mCurrentTabIndex != mIndex) {
             FragmentTransaction trx = getSupportFragmentManager().beginTransaction();
@@ -78,10 +93,12 @@ public class MainActivity extends BaseActivity implements MainContract.View {
         mCurrentTabIndex = mIndex;
     }
 
+
+
     private View.OnClickListener mOnTabClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            setTab(Integer.parseInt(String.valueOf(v.getTag())));
+            onClickNavigator(Integer.parseInt(String.valueOf(v.getTag())));
         }
     };
 
@@ -97,27 +114,6 @@ public class MainActivity extends BaseActivity implements MainContract.View {
     protected void initData() {
 
     }
-
-
-/*    @OnClick(R.id.send_http)
-    public void onClickWeather() {
-        Timber.tag("MainAc");
-        Timber.d("aaaaaaaaaaaabbbbbbbbbcccccccc");
-        BottomMenuDialog dialog = new BottomMenuDialog.BottomMenuBuilder()
-                .addItem("拍照", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                    }
-                })
-                .addItem("相册中选择", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                    }
-                })
-                .addItem("取消", null).build();
-        dialog.show(getSupportFragmentManager());
-    }*/
 
     @Override
     public void onRespLogin() {

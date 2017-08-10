@@ -1,7 +1,9 @@
 package com.ldroid.pbox.module.main.fragment;
 
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +13,12 @@ import android.widget.ImageView;
 import com.crazysunj.cardslideview.CardHandler;
 import com.crazysunj.cardslideview.CardViewPager;
 import com.ldroid.pbox.R;
+import com.ldroid.pbox.common.callback.SimpleCallback;
 import com.ldroid.pbox.common.ui.BaseFragment;
+import com.ldroid.pbox.common.util.ToastUtils;
+import com.ldroid.pbox.dao.ConfigDao;
+import com.ldroid.pbox.entities.out.UserOutEntity;
+import com.ldroid.pbox.module.login.LoginActivity;
 import com.ldroid.pbox.module.main.tools.CommonToolsActivity;
 import com.ldroid.pbox.module.main.tools.EmsToolsActivity;
 import com.ldroid.pbox.module.main.tools.EubToolsActivity;
@@ -76,6 +83,11 @@ public class MainFragment extends BaseFragment {
     }
 
 
+    private void confirmClean() {
+
+    }
+
+
     @OnClick(R.id.module_common)
     public void onClickCommon() {
         startAnimActivity(CommonToolsActivity.class);
@@ -83,54 +95,105 @@ public class MainFragment extends BaseFragment {
 
     @OnClick(R.id.module_eub)
     public void onClickEub() {
-        startAnimActivity(EubToolsActivity.class);
+        checkLogin(new SimpleCallback() {
+            @Override
+            public void onCallback(Object data) {
+                startAnimActivity(EubToolsActivity.class);
+            }
+        });
     }
 
     @OnClick(R.id.module_small)
     public void onClickSmall() {
-        startAnimActivity(PostalSmallToolsActivity.class);
+        checkLogin(new SimpleCallback() {
+            @Override
+            public void onCallback(Object data) {
+                startAnimActivity(PostalSmallToolsActivity.class);
+            }
+        });
     }
 
     @OnClick(R.id.module_big)
     public void onClickBig() {
-        startAnimActivity(PostalBigToolsActivity.class);
+
+        checkLogin(new SimpleCallback() {
+            @Override
+            public void onCallback(Object data) {
+                startAnimActivity(PostalBigToolsActivity.class);
+            }
+        });
     }
 
     @OnClick(R.id.module_ems)
     public void onClickEms() {
-        startAnimActivity(EmsToolsActivity.class);
+        checkLogin(new SimpleCallback() {
+            @Override
+            public void onCallback(Object data) {
+                startAnimActivity(EmsToolsActivity.class);
+            }
+        });
     }
 
     @OnClick(R.id.module_foreign)
     public void onClickForeign() {
-        startAnimActivity(ForeignToolsActivity.class);
+        checkLogin(new SimpleCallback() {
+            @Override
+            public void onCallback(Object data) {
+                startAnimActivity(ForeignToolsActivity.class);
+            }
+        });
     }
 
 
     @OnClick(R.id.module_profit)
     public void onClickProfit() {
-        startAnimActivity(ProfitToolsActivity.class);
+        checkLogin(new SimpleCallback() {
+            @Override
+            public void onCallback(Object data) {
+                startAnimActivity(ProfitToolsActivity.class);
+            }
+        });
     }
 
 
     @OnClick(R.id.module_weight)
     public void onClickWeight() {
-        startAnimActivity(WeightToolsActivity.class);
+        checkLogin(new SimpleCallback() {
+            @Override
+            public void onCallback(Object data) {
+                startAnimActivity(WeightToolsActivity.class);
+            }
+        });
     }
 
     @OnClick(R.id.module_goods)
     public void onClickGoods() {
-        startAnimActivity(GoodsToolsActivity.class);
+        checkLogin(new SimpleCallback() {
+            @Override
+            public void onCallback(Object data) {
+                startAnimActivity(GoodsToolsActivity.class);
+            }
+        });
     }
 
     @OnClick(R.id.module_logistics)
     public void onClickLogistics() {
-        startAnimActivity(LogisticsToolsActivity.class);
+        checkLogin(new SimpleCallback() {
+            @Override
+            public void onCallback(Object data) {
+                startAnimActivity(LogisticsToolsActivity.class);
+            }
+        });
     }
 
     @OnClick(R.id.module_fee)
     public void onClickFeeTools() {
-        startAnimActivity(FeeToolsActivity.class);
+        checkLogin(new SimpleCallback() {
+            @Override
+            public void onCallback(Object data) {
+                startAnimActivity(FeeToolsActivity.class);
+            }
+        });
     }
 
 

@@ -8,12 +8,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:orientation="vertical"
         android:paddingLeft="45dp"
-        android:paddingRight="45dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:paddingRight="45dp">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -33,6 +33,7 @@
             android:drawablePadding="7dp"
             android:hint="请输入手机号码"
             android:inputType="number"
+            android:textColor="@color/colorText"
             android:maxLength="11"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
@@ -53,6 +54,7 @@
             android:drawableLeft="@drawable/icon_login_pwd"
             android:drawablePadding="7dp"
             android:hint="请输入密码"
+            android:textColor="@color/colorText"
             android:inputType="textPassword"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
@@ -74,26 +76,83 @@
             android:textColor="@color/colorWhite"
             android:textSize="18sp"/>
 
-        <TextView
-            android:id="@+id/tv_register"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="还没注册?立即注册"
-            android:textColor="@color/colorHint"
-            android:textSize="14sp"/>
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="还没注册?立即注册"
+                android:textColor="@color/colorHint"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tv_forget"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:gravity="right"
+                android:text="忘记密码？"
+                android:textColor="@color/colorHint"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_guest"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="16dp"
-        android:gravity="center"
-        android:text="暂不登录随便逛逛"
-        android:textColor="@color/colorApp"
-        android:textSize="14sp"/>
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_wechat"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_qq"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_sina"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_guest"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="暂不登录随便逛逛"
+            android:textColor="@color/colorApp"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
 
 </RelativeLayout>

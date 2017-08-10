@@ -3,7 +3,9 @@
  */
 package com.ldroid.pbox.common.ui;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -18,6 +20,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ldroid.pbox.R;
+import com.ldroid.pbox.common.callback.SimpleCallback;
+import com.ldroid.pbox.dao.ConfigDao;
+import com.ldroid.pbox.entities.out.UserOutEntity;
+import com.ldroid.pbox.module.login.LoginActivity;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -69,6 +75,30 @@ public abstract class BaseFragment extends Fragment implements OnClickListener {
 
     public void startAnimActivity(Class<?> cla) {
         startActivity(new Intent(getActivity(), cla));
+    }
+
+
+    public void checkLogin(SimpleCallback callback) {
+        UserOutEntity user = ConfigDao.getInstance().getUser();
+        if (user == null) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setMessage("现在登录?");
+            builder.setNegativeButton("确定", new DialogInterface.OnClickListener() {
+
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    startAnimActivity(LoginActivity.class);
+                    getActivity().finish();
+                }
+            });
+            AlertDialog dialog = builder.create();
+            dialog.setCanceledOnTouchOutside(true);
+            dialog.show();
+        } else {
+            if (callback != null) {
+                callback.onCallback(null);
+            }
+        }
     }
 
 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_common_title_bar"></include>
+
+
+    <EditText
+        android:id="@+id/et_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:gravity="top|left"
+        android:hint="请输入反馈内容"
+        android:padding="10dp"
+        android:maxLines="10"
+        android:maxLength="200"
+        android:background="@color/colorWhite"
+        android:textColor="@color/colorText"
+        android:textColorHint="@color/colorHint"
+        android:textSize="16sp"/>
+
+
+</LinearLayout>

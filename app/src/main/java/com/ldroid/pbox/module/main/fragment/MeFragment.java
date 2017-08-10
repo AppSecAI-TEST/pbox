@@ -2,7 +2,11 @@ package com.ldroid.pbox.module.main.fragment;
 
 
 import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
+import android.content.ComponentName;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +23,7 @@ import com.ldroid.pbox.common.util.ToastUtils;
 import com.ldroid.pbox.dao.ConfigDao;
 import com.ldroid.pbox.entities.out.UserOutEntity;
 import com.ldroid.pbox.module.login.LoginActivity;
+import com.ldroid.pbox.module.me.FeedbackActivity;
 import com.ldroid.pbox.module.me.ModifyNickNameActivity;
 import com.ldroid.pbox.module.me.PersonalActivity;
 import com.ldroid.pbox.widget.SubscribeDialog;
@@ -47,8 +52,7 @@ public class MeFragment extends BaseFragment implements AdapterView.OnItemClickL
     private SubscribeDialog mSubDialog;
 
     @BindView(R.id.tv_name)
-    TextView mTvName ;
-
+    TextView mTvName;
 
 
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -75,8 +79,8 @@ public class MeFragment extends BaseFragment implements AdapterView.OnItemClickL
 
         mSubDialog = new SubscribeDialog(getActivity());
 
-        UserOutEntity user = ConfigDao.getInstance().getUser() ;
-        if(user != null){
+        UserOutEntity user = ConfigDao.getInstance().getUser();
+        if (user != null) {
             mTvName.setText(user.NickName);
         }
     }
@@ -109,15 +113,33 @@ public class MeFragment extends BaseFragment implements AdapterView.OnItemClickL
             case SHARE:
                 break;
             case CLEAN:
-                confirmClean() ;
+                confirmClean();
                 break;
             case APPRAISE:
+                appStore();
                 break;
             case FEEDBACK:
+                startAnimActivity(FeedbackActivity.class);
                 break;
             case LOGOUT:
-                confirmLogout() ;
+                confirmLogout();
                 break;
+        }
+    }
+
+
+    private void appStore() {
+        try {
+            Uri uri = Uri.parse("market://details?id=" + getActivity().getPackageName());
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            ComponentName componentName = intent
+                    .resolveActivity(getActivity().getPackageManager());
+            if (componentName != null) {
+                startActivity(intent);
+            }
+        } catch (ActivityNotFoundException e) {
+            ToastUtils.showShortToast(getActivity(), "无法开启应用商店!");
         }
     }
 

@@ -75,6 +75,7 @@
 
 
                         <Button
+                            android:id="@+id/one_month"
                             android:layout_width="59dp"
                             android:layout_height="20dp"
                             android:layout_marginTop="10dp"

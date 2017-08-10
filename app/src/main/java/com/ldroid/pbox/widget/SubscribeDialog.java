@@ -13,6 +13,12 @@ import com.ldroid.pbox.common.ui.BaseActivity;
 
 public class SubscribeDialog extends AppCompatDialog {
 
+
+    public static final int ONE_MONTH = 1 ;
+    public static final int THREE_MONTH = 2 ;
+    public static final int HALF_YEAR = 3 ;
+    public static final int ONE_YEAR = 4 ;
+
     private BaseActivity mAct;
 
 
@@ -27,7 +33,6 @@ public class SubscribeDialog extends AppCompatDialog {
         setContentView(R.layout.layout_subscribe_dialog);
 
         TextView originalText = (TextView) findViewById(R.id.tv_original);
-        originalText.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
 
 
         findViewById(R.id.dismiss).setOnClickListener(mItemClickListener);

@@ -19,6 +19,8 @@ import android.widget.TextView;
 
 import com.ldroid.pbox.R;
 
+import org.greenrobot.eventbus.EventBus;
+
 import butterknife.ButterKnife;
 
 public abstract class BaseFragment extends Fragment implements OnClickListener {
@@ -68,6 +70,26 @@ public abstract class BaseFragment extends Fragment implements OnClickListener {
     public void startAnimActivity(Class<?> cla) {
         startActivity(new Intent(getActivity(), cla));
     }
+
+
+    public void register(Object subscriber) {
+        if (!EventBus.getDefault().isRegistered(subscriber)) {
+            EventBus.getDefault().register(subscriber);
+        }
+    }
+
+    public void post(Object... event) {
+        for (Object e : event) {
+            EventBus.getDefault().post(e);
+        }
+    }
+
+    public void unregister(Object subscriber) {
+        if (EventBus.getDefault().isRegistered(subscriber)) {
+            EventBus.getDefault().unregister(subscriber);
+        }
+    }
+
 
 
     public void showProgressDialog(String msg){

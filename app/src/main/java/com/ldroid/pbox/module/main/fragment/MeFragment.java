@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.ldroid.pbox.R;
 import com.ldroid.pbox.common.ui.BaseFragment;
@@ -16,9 +17,14 @@ import com.ldroid.pbox.common.ui.adapter.CommonAdapter;
 import com.ldroid.pbox.common.ui.adapter.ViewHolder;
 import com.ldroid.pbox.common.util.ToastUtils;
 import com.ldroid.pbox.dao.ConfigDao;
+import com.ldroid.pbox.entities.out.UserOutEntity;
 import com.ldroid.pbox.module.login.LoginActivity;
+import com.ldroid.pbox.module.me.ModifyNickNameActivity;
 import com.ldroid.pbox.module.me.PersonalActivity;
 import com.ldroid.pbox.widget.SubscribeDialog;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 
@@ -40,6 +46,16 @@ public class MeFragment extends BaseFragment implements AdapterView.OnItemClickL
     private Adapter mAdapter;
     private SubscribeDialog mSubDialog;
 
+    @BindView(R.id.tv_name)
+    TextView mTvName ;
+
+
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onNickNameChanged(ModifyNickNameActivity.NickNameEvent event) {
+        mTvName.setText(event.nickname);
+    }
+
     @Override
     protected View getContentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_me, container, false);
@@ -47,7 +63,7 @@ public class MeFragment extends BaseFragment implements AdapterView.OnItemClickL
 
     @Override
     protected void initPreparation() {
-
+        register(this);
     }
 
     @Override
@@ -58,6 +74,11 @@ public class MeFragment extends BaseFragment implements AdapterView.OnItemClickL
         mListView.setAdapter(mAdapter);
 
         mSubDialog = new SubscribeDialog(getActivity());
+
+        UserOutEntity user = ConfigDao.getInstance().getUser() ;
+        if(user != null){
+            mTvName.setText(user.NickName);
+        }
     }
 
     @Override
@@ -161,4 +182,9 @@ public class MeFragment extends BaseFragment implements AdapterView.OnItemClickL
         }
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unregister(this);
+    }
 }

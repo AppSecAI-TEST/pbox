@@ -1,14 +1,19 @@
 package com.ldroid.pbox.module.main.tools;
 
 import android.content.Context;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.ldroid.pbox.R;
 import com.ldroid.pbox.common.ui.BaseActivity;
 import com.ldroid.pbox.common.ui.adapter.CommonAdapter;
 import com.ldroid.pbox.common.ui.adapter.ViewHolder;
+import com.ldroid.pbox.common.util.ListUtils;
 import com.ldroid.pbox.common.util.ToastUtils;
 import com.ldroid.pbox.dao.ConfigDao;
 import com.ldroid.pbox.entities.out.ToolsCBLROutEntity;
@@ -44,6 +49,12 @@ public class CountryListActivity extends BaseActivity implements ToolsContract.V
 
     private int mType;
 
+
+    @BindView(R.id.et_search)
+    EditText mEtSearch;
+
+    private ArrayList<ToolsCountrysOutEntity.CountrysEntity> mResultList ;
+
     @Override
     protected void initPreparation() {
         mPresenter = new ToosPresenter(this);
@@ -70,6 +81,40 @@ public class CountryListActivity extends BaseActivity implements ToolsContract.V
     @Override
     protected void initListener() {
         mListView.setOnItemClickListener(this);
+
+        mEtSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                filterCountry();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+    }
+
+
+    private void filterCountry(){
+        String filter = mEtSearch.getText().toString() ;
+        ArrayList<ToolsCountrysOutEntity.CountrysEntity> searchList = new ArrayList<>();
+
+        if (!ListUtils.isEmpty(mResultList)) {
+            for (ToolsCountrysOutEntity.CountrysEntity c : mResultList) {
+                if (!TextUtils.isEmpty(filter)) {
+                    if (c.CountryName.contains(filter)) {
+                        searchList.add(c);
+                    }
+                } else {
+                    searchList.add(c);
+                }
+            }
+        }
+        mAdapter.setListData(searchList);
     }
 
 
@@ -133,7 +178,9 @@ public class CountryListActivity extends BaseActivity implements ToolsContract.V
 
     @Override
     public void onRespToolsCountry(ToolsCountrysOutEntity data) {
-        mAdapter.setListData(data.Countrys);
+        mResultList = data.Countrys;
+        filterCountry();
+
     }
 
     @Override

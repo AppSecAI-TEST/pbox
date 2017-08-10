@@ -9,6 +9,34 @@
 
     <include layout="@layout/layout_common_title_bar"></include>
 
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:paddingLeft="14dp"
+        android:background="@color/colorWhite"
+        android:paddingRight="14dp">
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tv_cancel"
+            android:background="@drawable/btn_white_radius_90_stroke"
+            android:drawableLeft="@drawable/icon_common_search"
+            android:drawablePadding="5dp"
+            android:drawableRight="@drawable/icon_qr_scan"
+            android:gravity="center_vertical"
+            android:hint="请输入查询单号"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:singleLine="true"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint"
+            android:textSize="15sp"/>
+
+    </RelativeLayout>
+
     <ListView
         android:id="@+id/list_view"
         android:layout_width="match_parent"

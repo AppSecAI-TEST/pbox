@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -36,7 +37,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 
-public class LogisticsFragment extends BaseFragment implements ToolsContract.View {
+public class LogisticsFragment extends BaseFragment implements ToolsContract.View ,AdapterView.OnItemClickListener{
 
     private static final String LOGISTICS_TYPE = "logistics_type";
 
@@ -186,6 +187,12 @@ public class LogisticsFragment extends BaseFragment implements ToolsContract.Vie
     public void onRespToolsWLZZ(ToolsWLZZOutEntity data) {
 
         mAdapter.setExpress(data.ExpressInfo);
+
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        ToolsWLZZOutEntity.ExpressItem express = mAdapter.getItem(position) ;
 
     }
 

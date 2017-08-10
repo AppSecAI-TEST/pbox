@@ -39,6 +39,8 @@
             android:inputType="numberDecimal"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="24dp"
+            android:hint="请输入记抛基数"
+            android:textColorHint="@color/colorHint"
             android:textColor="@color/colorText"
             android:textSize="14sp"/>
     </LinearLayout>
@@ -60,6 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
+            android:text="抛重："
             android:textColor="@color/colorText"
             android:textSize="20sp"/>
 

@@ -151,7 +151,7 @@ public class GoodsToolsActivity extends BaseActivity implements  ToolsContract.V
 
     @Override
     public void onRespToolsHGZX(ToolsHGZXOutEntity data) {
-        result.setText("货物数量：" + data.Calculation + "个");
+        result.setText("装柜箱数：" + data.Calculation + "个");
     }
 
     @Override

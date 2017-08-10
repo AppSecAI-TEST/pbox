@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="货柜装箱"
+            android:text="装柜体积"
             android:textColor="@color/colorText"
             android:textSize="15sp"/>
 
@@ -40,6 +40,8 @@
             android:inputType="numberDecimal"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="24dp"
+            android:hint="单位：立方"
+            android:textColorHint="@color/colorHint"
             android:textColor="@color/colorText"
             android:textSize="14sp"/>
     </LinearLayout>
@@ -61,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
-            android:text="货物数量："
+            android:text="装柜箱数："
             android:textColor="@color/colorText"
             android:textSize="20sp"/>
 

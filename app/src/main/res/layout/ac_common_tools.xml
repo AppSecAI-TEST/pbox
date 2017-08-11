@@ -386,13 +386,13 @@
 
             <include layout="@layout/layout_common_tools_item"></include>
 
-            <com.ldroid.pbox.common.ui.lib.MyListView
+            <com.ipricebox.android.common.ui.lib.MyListView
                 android:id="@+id/list_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="1.5px"
                 android:background="@color/colorWhite"
-                android:divider="@android:color/transparent"></com.ldroid.pbox.common.ui.lib.MyListView>
+                android:divider="@android:color/transparent"></com.ipricebox.android.common.ui.lib.MyListView>
 
         </LinearLayout>
     </ScrollView>

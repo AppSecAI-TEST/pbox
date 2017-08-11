@@ -39,7 +39,7 @@
             android:layout_marginLeft="10dp"
             android:background="@drawable/icon_common_arrow_right"/>
 
-        <com.ldroid.pbox.common.ui.lib.CircleImageView
+        <com.ipricebox.android.common.ui.lib.CircleImageView
             android:id="@+id/avatar"
             android:layout_width="40dp"
             android:layout_height="40dp"

@@ -10,10 +10,10 @@
     <include layout="@layout/layout_common_title_bar"></include>
 
 
-    <com.ldroid.pbox.widget.calendar.CalendarLayout
+    <com.ipricebox.android.widget.calendar.CalendarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </com.ldroid.pbox.widget.calendar.CalendarLayout>
+    </com.ipricebox.android.widget.calendar.CalendarLayout>
 
 
     <Button

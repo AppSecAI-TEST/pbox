@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.ldroid.pbox">
+          package="com.ipricebox.android">
 
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -8,14 +8,14 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 
     <application
-        android:name=".MainApp"
+        android:name="com.ipricebox.android.MainApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".module.login.SplashActivity"
+            android:name="com.ipricebox.android.module.login.SplashActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
@@ -26,134 +26,134 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".module.login.LoginActivity"
+            android:name="com.ipricebox.android.module.login.LoginActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"/>
         <activity
-            android:name=".module.login.RegisterActivity"
+            android:name="com.ipricebox.android.module.login.RegisterActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"/>
         <activity
-            android:name=".module.login.ForgetPwdStep1Activity"
+            android:name="com.ipricebox.android.module.login.ForgetPwdStep1Activity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"/>
         <activity
-            android:name=".module.login.ForgetPwdStep2Activity"
+            android:name="com.ipricebox.android.module.login.ForgetPwdStep2Activity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"/>
         <activity
-            android:name=".module.main.MainActivity"
+            android:name="com.ipricebox.android.module.main.MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"/>
         <activity
-            android:name=".module.me.PersonalActivity"
+            android:name="com.ipricebox.android.module.me.PersonalActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
-            android:name=".module.me.ModifyNickNameActivity"
+            android:name="com.ipricebox.android.module.me.ModifyNickNameActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
-            android:name=".module.me.ModifyPhoneActivity"
+            android:name="com.ipricebox.android.module.me.ModifyPhoneActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
-            android:name=".module.me.FeedbackActivity"
+            android:name="com.ipricebox.android.module.me.FeedbackActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
-            android:name=".module.chart.ChartExoprtActivity"
+            android:name="com.ipricebox.android.module.chart.ChartExoprtActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
-            android:name=".module.chart.SearchProductActivity"
+            android:name="com.ipricebox.android.module.chart.SearchProductActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
-            android:name=".module.main.tools.CommonToolsActivity"
+            android:name="com.ipricebox.android.module.main.tools.CommonToolsActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
-            android:name=".module.main.tools.EubToolsActivity"
+            android:name="com.ipricebox.android.module.main.tools.EubToolsActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
-            android:name=".module.main.tools.PostalSmallToolsActivity"
+            android:name="com.ipricebox.android.module.main.tools.PostalSmallToolsActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
-            android:name=".module.main.tools.PostalBigToolsActivity"
+            android:name="com.ipricebox.android.module.main.tools.PostalBigToolsActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
-            android:name=".module.main.tools.EmsToolsActivity"
+            android:name="com.ipricebox.android.module.main.tools.EmsToolsActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
-            android:name=".module.main.tools.ForeignToolsActivity"
+            android:name="com.ipricebox.android.module.main.tools.ForeignToolsActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden">
         </activity>
         <activity
-            android:name=".module.main.tools.ProfitToolsActivity"
+            android:name="com.ipricebox.android.module.main.tools.ProfitToolsActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
-            android:name=".module.main.tools.WeightToolsActivity"
+            android:name="com.ipricebox.android.module.main.tools.WeightToolsActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
-            android:name=".module.main.tools.GoodsToolsActivity"
+            android:name="com.ipricebox.android.module.main.tools.GoodsToolsActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
-            android:name=".module.main.tools.LogisticsToolsActivity"
+            android:name="com.ipricebox.android.module.main.tools.LogisticsToolsActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
-            android:name=".module.main.tools.FeeToolsActivity"
+            android:name="com.ipricebox.android.module.main.tools.FeeToolsActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
-            android:name=".module.main.tools.CountryListActivity"
+            android:name="com.ipricebox.android.module.main.tools.CountryListActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">

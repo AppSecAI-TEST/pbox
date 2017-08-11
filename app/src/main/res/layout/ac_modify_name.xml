@@ -20,7 +20,7 @@
         android:paddingRight="16dp">
 
 
-        <com.ldroid.pbox.common.ui.lib.ClearEditText
+        <com.ipricebox.android.common.ui.lib.ClearEditText
             android:id="@+id/modify_name"
             android:layout_width="fill_parent"
             android:layout_height="50dp"

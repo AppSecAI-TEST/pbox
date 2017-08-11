@@ -99,6 +99,10 @@ public class PersonalActivity extends BaseActivity {
     public void onClickPhone() {
         startAnimActivity(ModifyPhoneActivity.class);
     }
+    @OnClick(R.id.modify_pwd)
+    public void onClickPwd() {
+        startAnimActivity(ModifyPwdActivity.class);
+    }
 
 
     @Override

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.ipricebox.android.R;
 import com.ipricebox.android.common.ui.BaseActivity;
@@ -26,6 +27,7 @@ import com.ipricebox.android.entities.out.ToolsYFGSOutEntity;
 import com.ipricebox.android.entities.out.UserOutEntity;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 
 public class ForeignToolsActivity extends BaseActivity implements ToolsContract.View {
@@ -35,6 +37,12 @@ public class ForeignToolsActivity extends BaseActivity implements ToolsContract.
     @BindView(R.id.list_view)
     ListView mListView;
     private Adapter mAdapter;
+
+    @BindView(R.id.single)
+    TextView mTvSingle ;
+
+    @BindView(R.id.multi)
+    TextView mTvMulti ;
 
 
     @BindView(R.id.productname) EditText productname ;
@@ -74,6 +82,8 @@ public class ForeignToolsActivity extends BaseActivity implements ToolsContract.
         mAdapter = new Adapter();
         mListView.setAdapter(mAdapter);
 
+        mTvSingle.setSelected(true);
+
     }
 
     @Override
@@ -84,6 +94,17 @@ public class ForeignToolsActivity extends BaseActivity implements ToolsContract.
     @Override
     protected void initData() {
 
+    }
+
+    @OnClick({R.id.single})
+    public void onClickSingle(View v){
+        v.setSelected(true);
+        mTvMulti.setSelected(false);
+    }
+    @OnClick({R.id.multi})
+    public void onClickMulti(View v){
+        v.setSelected(true);
+        mTvSingle.setSelected(false);
     }
 
 

@@ -515,20 +515,22 @@
                 android:paddingRight="60dp">
 
                 <TextView
+                    android:id="@+id/single"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="单品"
-                    android:textColor="@color/colorApp"
+                    android:textColor="@color/text_color_app"
                     android:textSize="16sp"/>
 
                 <TextView
+                    android:id="@+id/multi"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
                     android:gravity="center"
                     android:text="批量"
-                    android:textColor="@color/colorText"
+                    android:textColor="@color/text_color_app"
                     android:textSize="16sp"/>
 
             </RelativeLayout>

@@ -137,7 +137,7 @@ public class CommonToolsActivity extends BaseActivity implements ToolsContract.V
 
     @Override
     public void onError(String msg) {
-        ToastUtils.showLongToast(mContext, msg);
+        ToastUtils.showCustomToast(mContext, msg);
     }
 
     @Override

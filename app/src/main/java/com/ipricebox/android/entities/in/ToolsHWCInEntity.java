@@ -1,5 +1,7 @@
 package com.ipricebox.android.entities.in;
 
+import android.text.TextUtils;
+
 import com.google.gson.annotations.Expose;
 import com.ipricebox.android.common.entities.InputEntity;
 
@@ -82,9 +84,25 @@ public class ToolsHWCInEntity extends InputEntity {
 
     @Override
     public Boolean checkInput() {
+        if(TextUtils.isEmpty(productname) || TextUtils.isEmpty(countryname) ||
+                TextUtils.isEmpty(profitmargin) ||
+                TextUtils.isEmpty(price) ||
+                TextUtils.isEmpty(amount) ||
+                TextUtils.isEmpty(weight) ||
+                TextUtils.isEmpty(turnaroundtime) ||
+                TextUtils.isEmpty(exchangerate2) ||
+                TextUtils.isEmpty(grossfreight1) ||
+                TextUtils.isEmpty(firstfreight) ||
+                TextUtils.isEmpty(secondfreight) ||
+                TextUtils.isEmpty(incidentals) ||
+                TextUtils.isEmpty(exchangerate1) ||
+                TextUtils.isEmpty(financingcosrate)
+                ){
+            errors.add("请补全输入信息");
+            return false ;
+        }
         return true;
     }
-
 
     /**
      userid	int	是	用户ID

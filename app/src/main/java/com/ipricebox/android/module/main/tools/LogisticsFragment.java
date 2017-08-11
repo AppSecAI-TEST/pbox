@@ -123,7 +123,7 @@ public class LogisticsFragment extends BaseFragment implements ToolsContract.Vie
 
     @Override
     public void onError(String msg) {
-        ToastUtils.showLongToast(getActivity(), msg);
+        ToastUtils.showCustomToast(getActivity(), msg);
     }
 
     @Override

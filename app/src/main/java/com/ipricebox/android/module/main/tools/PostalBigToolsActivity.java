@@ -152,7 +152,7 @@ public class PostalBigToolsActivity extends BaseActivity implements ToolsContrac
 
     @Override
     public void onError(String msg) {
-        ToastUtils.showLongToast(mContext, msg);
+        ToastUtils.showCustomToast(mContext, msg);
     }
 
     @Override

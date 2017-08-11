@@ -154,7 +154,7 @@ public class EmsToolsActivity extends BaseActivity implements ToolsContract.View
 
     @Override
     public void onError(String msg) {
-        ToastUtils.showLongToast(mContext, msg);
+        ToastUtils.showCustomToast(mContext, msg);
     }
 
     @Override

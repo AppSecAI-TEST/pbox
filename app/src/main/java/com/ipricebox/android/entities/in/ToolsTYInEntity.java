@@ -1,5 +1,7 @@
 package com.ipricebox.android.entities.in;
 
+import android.text.TextUtils;
+
 import com.google.gson.annotations.Expose;
 import com.ipricebox.android.common.entities.InputEntity;
 
@@ -65,6 +67,19 @@ public class ToolsTYInEntity extends InputEntity {
 
     @Override
     public Boolean checkInput() {
+        if(TextUtils.isEmpty(productname) || TextUtils.isEmpty(countryname) ||
+                TextUtils.isEmpty(profitmargin) ||
+                TextUtils.isEmpty(price) ||
+                TextUtils.isEmpty(amount) ||
+                TextUtils.isEmpty(grossfreight1) ||
+                TextUtils.isEmpty(grossfreight2) ||
+                TextUtils.isEmpty(incidentals) ||
+                TextUtils.isEmpty(exchangerate1) ||
+                TextUtils.isEmpty(exchangerate2)
+                ){
+            errors.add("请补全输入信息");
+            return false ;
+        }
         return true;
     }
 

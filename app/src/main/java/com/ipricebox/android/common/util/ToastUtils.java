@@ -2,7 +2,13 @@ package com.ipricebox.android.common.util;
 
 import android.content.Context;
 import android.os.Handler;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.ipricebox.android.R;
 
 public class ToastUtils {
 
@@ -95,5 +101,21 @@ public class ToastUtils {
 	public static void showLongToast(final Context context, final String text,
 									 boolean allowToastQueue) {
 		showToast(context, -1, text, Toast.LENGTH_LONG, allowToastQueue);
+	}
+
+	public static void showCustomToast(final Context context,final String text) {
+		new Handler(context.getMainLooper()).post(new Runnable() {
+
+			@Override
+			public void run() {
+				Toast toast = new Toast(context);
+				final View view = LayoutInflater.from(context).inflate(R.layout.layout_custom_toast, null);
+				TextView tips = (TextView) view.findViewById(R.id.tv_custom_text);
+				tips.setText(text);
+				toast.setView(view);
+				toast.setGravity(Gravity.CENTER,0,0);
+				toast.show();
+			}
+		});
 	}
 }

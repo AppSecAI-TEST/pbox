@@ -1,5 +1,7 @@
 package com.ipricebox.android.entities.in;
 
+import android.text.TextUtils;
+
 import com.google.gson.annotations.Expose;
 import com.ipricebox.android.common.entities.InputEntity;
 
@@ -57,9 +59,19 @@ public class ToolsCBLRInEntity extends InputEntity {
 
     @Override
     public Boolean checkInput() {
+        if(TextUtils.isEmpty(productname) || TextUtils.isEmpty(countryname) ||
+                TextUtils.isEmpty(sellingprice) ||
+                TextUtils.isEmpty(cost) ||
+                TextUtils.isEmpty(grossfreight2) ||
+                TextUtils.isEmpty(incidentals) ||
+                TextUtils.isEmpty(exchangerate1) ||
+                TextUtils.isEmpty(exchangerate2)
+                ){
+            errors.add("请补全输入信息");
+            return false ;
+        }
         return true;
     }
-
 
     /**
      userid	int	是	用户ID

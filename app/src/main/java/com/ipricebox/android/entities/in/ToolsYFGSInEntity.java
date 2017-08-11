@@ -1,5 +1,7 @@
 package com.ipricebox.android.entities.in;
 
+import android.text.TextUtils;
+
 import com.google.gson.annotations.Expose;
 import com.ipricebox.android.common.entities.InputEntity;
 
@@ -28,6 +30,18 @@ public class ToolsYFGSInEntity extends InputEntity {
     }
 
     @Override
+    public Boolean checkInput() {
+        if(TextUtils.isEmpty(channeltype) || TextUtils.isEmpty(countryname) ||
+                TextUtils.isEmpty(weight) ||
+                TextUtils.isEmpty(discount)
+                ){
+            errors.add("请补全输入信息");
+            return false ;
+        }
+        return true;
+    }
+
+    @Override
     public Map<String, String> getParams() {
         Map<String, String> params = super.getParams();
         params.put("userid", userid);
@@ -37,11 +51,6 @@ public class ToolsYFGSInEntity extends InputEntity {
         params.put("discount", discount);
 
         return params;
-    }
-
-    @Override
-    public Boolean checkInput() {
-        return true;
     }
 
 

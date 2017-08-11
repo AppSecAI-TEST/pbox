@@ -150,7 +150,7 @@ public class EubToolsActivity extends BaseActivity implements  ToolsContract.Vie
 
     @Override
     public void onError(String msg) {
-        ToastUtils.showLongToast(mContext, msg);
+        ToastUtils.showCustomToast(mContext, msg);
     }
 
     @Override

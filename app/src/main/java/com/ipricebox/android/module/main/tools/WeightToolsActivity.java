@@ -100,7 +100,7 @@ public class WeightToolsActivity extends BaseActivity implements  ToolsContract.
 
     @Override
     public void onError(String msg) {
-        ToastUtils.showLongToast(mContext,msg);
+        ToastUtils.showCustomToast(mContext,msg);
     }
 
     @Override

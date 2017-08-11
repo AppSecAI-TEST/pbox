@@ -1,5 +1,7 @@
 package com.ipricebox.android.entities.in;
 
+import android.text.TextUtils;
+
 import com.google.gson.annotations.Expose;
 import com.ipricebox.android.common.entities.InputEntity;
 
@@ -35,12 +37,17 @@ public class ToolsPZHSInEntity extends InputEntity {
 
         return params;
     }
-
     @Override
     public Boolean checkInput() {
+        if(TextUtils.isEmpty(length) || TextUtils.isEmpty(width) ||
+                TextUtils.isEmpty(height) ||
+                TextUtils.isEmpty(countingbase)
+                ){
+            errors.add("请补全输入信息");
+            return false ;
+        }
         return true;
     }
-
 
     /**
      userid	int	是	用户ID

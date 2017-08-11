@@ -1,10 +1,19 @@
 package com.ipricebox.android.module.login;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.CountDownTimer;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.TextPaint;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
+import android.text.style.ForegroundColorSpan;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.ipricebox.android.R;
 import com.ipricebox.android.common.ui.BaseActivity;
@@ -32,6 +41,9 @@ public class RegisterActivity extends BaseActivity implements LoginContract.View
     EditText mEtCode;
     @BindView(R.id.et_pwd)
     EditText mEtPwd;
+
+    @BindView(R.id.agreement)
+    TextView mTvAgreement;
 
 
     private VerifyDownTimer mCountDownTimer;
@@ -73,11 +85,29 @@ public class RegisterActivity extends BaseActivity implements LoginContract.View
     @Override
     protected void initUI() {
 
-        setTranslucentStatus(R.color.colorWhite, 0);
+        //setTranslucentStatus(R.color.colorWhite, 0);
 
         mCountDownTimer = new VerifyDownTimer(60000, 1000);
 
+        SpannableStringBuilder spannable = new SpannableStringBuilder("注册即表明你同意《用户协议》中的条款");
+        spannable.setSpan(new ClickableSpan() {
+            @Override
+            public void onClick(View widget) {
+                startAnimActivity(AgreementActivity.class);
+            }
+
+            @Override
+            public void updateDrawState(TextPaint ds) {
+                ds.setColor(getResources().getColor(R.color.colorApp));
+            }
+        }, 8, 14, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        mTvAgreement.setMovementMethod(LinkMovementMethod.getInstance());
+        mTvAgreement.setText(spannable);
+
     }
+
+
 
 
     @OnClick(R.id.btn_sms)

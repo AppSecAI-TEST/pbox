@@ -104,10 +104,6 @@
             android:layout_height="1.5px"
             android:background="@color/colorSeparator"/>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="1.5px"
-            android:background="@color/colorSeparator"/>
 
         <EditText
             android:id="@+id/et_pwd"
@@ -139,6 +135,18 @@
             android:textSize="18sp"/>
 
     </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/agreement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="注册即表明你同意《用户协议》中的条款"
+        android:textColor="@color/colorHint"
+        android:textSize="13sp"/>
 
 
 </RelativeLayout>

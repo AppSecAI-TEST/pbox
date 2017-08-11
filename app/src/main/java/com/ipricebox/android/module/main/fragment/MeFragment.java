@@ -153,7 +153,7 @@ public class MeFragment extends BaseFragment implements AdapterView.OnItemClickL
 
     private void confirmClean() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage("确认清楚缓存?");
+        builder.setMessage("确认清除缓存?");
         builder.setNegativeButton("清除", new DialogInterface.OnClickListener() {
 
             @Override

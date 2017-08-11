@@ -129,7 +129,7 @@ public class ProfitToolsActivity extends BaseActivity implements ToolsContract.V
 
     @Override
     public void onError(String msg) {
-        ToastUtils.showCustomToast(mContext, msg);
+        ToastUtils.showLongToast(mContext, msg);
     }
 
     @Override
@@ -206,8 +206,8 @@ public class ProfitToolsActivity extends BaseActivity implements ToolsContract.V
             holder.setText(R.id.tv_ratio, item.getValue3());
 
 
-            holder.setVisible(R.id.tv_china, !TextUtils.isEmpty(item.getValue2()));
-            holder.setVisible(R.id.tv_ratio, !TextUtils.isEmpty(item.getValue3()));
+            holder.setVisible(R.id.tv_china, !TextUtils.isEmpty(item.value2));
+            holder.setVisible(R.id.tv_ratio, !TextUtils.isEmpty(item.value3));
 
             int color = getResources().getColor(R.color.colorText);
             holder.setTextColor(R.id.tv_foreign, color);

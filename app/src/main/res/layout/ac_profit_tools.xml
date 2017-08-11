@@ -232,7 +232,7 @@
                         android:background="@color/colorWhite"
                         android:hint="%"
                         android:inputType="numberDecimal"
-                        android:textColor="@color/colorHint"
+                        android:textColor="@color/colorText"
                         android:textColorHint="@color/colorHint"
                         android:textSize="14sp"/>
                 </LinearLayout>

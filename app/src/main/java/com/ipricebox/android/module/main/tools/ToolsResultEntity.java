@@ -9,8 +9,8 @@ public class ToolsResultEntity {
 
     public String key;
     private String value1;
-    private String value2;
-    private String value3;
+    public String value2;
+    public String value3;
 
     public ToolsResultEntity() {
     }

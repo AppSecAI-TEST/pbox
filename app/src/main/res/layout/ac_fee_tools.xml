@@ -146,7 +146,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
-            android:text="货物数量："
+            android:text="运费："
             android:textColor="@color/colorText"
             android:textSize="20sp"/>
 
@@ -182,7 +182,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
-            android:text="运费："
+            android:text="抛重："
             android:textColor="@color/colorText"
             android:textSize="20sp"/>
 
